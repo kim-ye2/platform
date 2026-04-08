@@ -5,11 +5,8 @@
     <meta charset="utf-8">
     <link href="/favicon.ico" rel="icon">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>조국혁신당 지방선거</title>
-    <meta content="조국혁신당 지방선거, 조국혁신당, 지방선거" name="keywords" />
-    <!-- <meta content="img/common/og_img.jpg" property="og:image">
-	<meta content="800" property="og:image:width">
-	<meta content="400" property="og:image:height"> -->
+    <title>Platform - Admin</title>
+    <meta content="" name="keywords" />
     <meta content="website" property="og:type">
     <meta content="template" property="og:url">
     <meta content="yes" name="apple-mobile-web-app-capable">
@@ -33,6 +30,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
         integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+      
+    </style>
+
     <script>
         $(function () {
             function bindPcNavHover() {
@@ -40,7 +42,7 @@
 
                 if (isPc) {
                     $('.nav_1depth')
-                    .off('.pcNav') // 중복 바인딩 방지
+                    .off('.pcNav')
                     .on('mouseenter.pcNav', function () {
                         $(this).children('.nav_2depth').stop(true, true).slideDown(200);
                     })
@@ -49,21 +51,17 @@
                     });
                 } else {
                     $('.nav_1depth').off('.pcNav');
-                    $('.nav_2depth').removeAttr('style'); // 열려있던 메뉴 초기화
+                    $('.nav_2depth').removeAttr('style');
                 }
             }
 
-            // 최초 실행
             bindPcNavHover();
-
-            // 화면 크기 변경 시 다시 적용
             $(window).on('resize', bindPcNavHover);
 
             $('body').removeClass('no-scroll');
             $('.nav_open').click(function () {
                 $(this).toggleClass('active');
                 $('nav > ul').toggleClass('open');
-
                 if ($(this).hasClass('active')) {
                     $('body').addClass('no-scroll');
                 } else {
@@ -71,6 +69,12 @@
                 }
             });
 
+            /*  모달닫기 */
+            $('.modal_close, .modal_btn_cancel').on('click', function () {
+                $('.modal_pass_overlay').fadeOut(200, function () {
+                    $(this).remove();
+                });
+            });
         });
     </script>
 </head>
@@ -80,26 +84,50 @@
         <div class="admin">
             <div class="adm_login_wrap">
                 <div class="login_form">
-                    <h1 class="logo">
-                        <a href="index.html"><img src="images/logo.svg" alt=""></a>
-                    </h1>
                     <h2>ADMINISTRATOR LOGIN</h2>
                     <div class="login_box">
                         <div class="login_box_input">
                             <input type="text" placeholder="아이디">
                             <input type="password" placeholder="비밀번호">
                         </div>
-                        <input type="submit" class="login_btn" value="로그인">
+                        <input type="submit" class="login_btn" value="로그인" onclick="location.href='user/list.html'">
                     </div>
-                    <p>Copyrights Ministry of environment. All Right Reserved.</p>
+                    <p>Copyrights Ministry of environment. All Right Reserved..</p>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- 비밀번호 변경 모달
+         (비밀번호 초기화 후 최초 로그인 시 노출) -->
+    <div class="modal_pass_overlay">
+        <div class="passmodal_box">
+
+            <div class="modal_header">
+                <h3 class="modal_title">비밀번호 변경</h3>
+                <button class="modal_close" aria-label="닫기">&#x2715;</button>
+            </div>
+
+            <div class="modal_notice">
+                <span class="modal_notice_icon">※</span>
+                <p>
+                    비밀번호 초기화 이후, 최초 로그인 시 비밀번호를 변경하셔야 합니다.<br>
+                    <strong>(비밀번호 규칙 : 영문(대/소문자), 숫자, 특수문자 중 최소 2가지 이상, 8글자 이상)</strong>
+                </p>
+            </div>
+
+            <div class="modal_input_group">
+                <input class="modal_input" type="password" placeholder="비밀번호">
+                <input class="modal_input" type="password" placeholder="비밀번호 확인">
+            </div>
+
+            <div class="modal_btn_group">
+                <button class="modal_btn modal_btn_cancel">취소</button>
+                <button class="modal_btn modal_btn_confirm">확인</button>
+            </div>
+
+        </div>
+    </div>
+
 </body>
-
-
 </html>
-
-<script>
-</script>
