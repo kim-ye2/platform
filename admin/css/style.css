@@ -1,7 +1,7 @@
 /* button */
 .admin button.btn_xs, .admin a.btn_xs {line-height: 25px;height:25px; border-radius: 3px;padding: 0 10px;background: #2C337D;color: #eee;font-size: 0.875em;}
 .admin button.btn_xs.squre, .admin a.btn_xs.squre {width: 25px;height:25px; padding: 0;text-align: center;}
-.admin a.btn_sm {padding: 6px 8px;color: #333;background: #fff;font-size: 1rem;line-height: 1; text-align: center;display: inline-block;border-radius: 3px;border: 1px solid #DDD;background: #FFF;}
+.admin a.btn_sm {padding: 8px 8px;color: #333;background: #fff;font-size: 1rem;line-height: 1; text-align: center;display: inline-block;border-radius: 3px;border: 1px solid #DDD;background: #FFF;display: flex;align-items:center; gap: 6px;}
 .admin a.btn_sm:hover, .admin a.btn_sm:focus{background-color: #f4f4f6;}
 .admin button.btn_sm {padding: 10px 12px;color: #333;background: #fff;font-size: 1rem;text-align: center;display: inline-block;border-radius: 3px;border: 1px solid #DDD;background: #FFF;}
 .admin button.btn_sm:hover, .admin button.btn_sm:focus{background-color: #f4f4f6;}
@@ -31,8 +31,9 @@
 .admin select {display: block;border: 1px solid #ddd;padding: 4px 12px;border-radius: 5px;color: #353535;text-align-last: left;min-height:36px;transition: all .2s;}
 .admin textarea {display: block;border: 1px solid #ddd;padding: 8px 12px;border-radius: 5px;height:160px;resize: none;width: 100%;transition: all .2s;}
 .admin input:disabled {background-color: #efefef;color:#818181;}
-.admin .flex {display: flex;align-items: center;gap:6px;}
+.admin .flex {display: flex;align-items: center;gap:6px;flex-wrap: wrap;}
 .admin .flex.gap_lg {gap:20px;}
+.admin .flex-end {display: flex;justify-content: flex-end;align-items: center;}
 .admin .checkbox {display: flex;gap:12px;align-items: center;}
 .admin .checkbox div {display: flex;gap:4px; align-items: center;}
 .admin .wfull {width: 100% !important;}
@@ -139,13 +140,15 @@ box-shadow: 3px 0 10px 0 rgba(0, 0, 0, 0.10);}
 .admin .adm_title {font-size: 2.5rem;font-weight: 600;color: #181F48;}
 .admin .adm_subtitle {font-size: 1.25rem;font-weight: 600;padding:0 16px;border-left: 6px solid #353535;margin:0 0 16px;line-height: 1;}
 
-
+.admin .appro{color: #2d4db8;font-weight: 600;}
+.admin .pend{color: #aa0000;font-weight: 600;}
+.admin .reject{color: #aa0000;font-weight: 600;}
 .admin .table_wrap {overflow-x: auto;}
 .admin .scroll-y {overflow-y: auto;height: 60vh;}
-.admin table {width: 100%;}
+.admin table {width: 100%;margin:0 0 10px 0;}
 .admin .table_a.table_a_double td {width: 84%;}
-.admin .table_a tr th {padding: 10px 12px;border-bottom: 1px solid #ddd;border-left: 1px solid #ddd;text-align: left;}
-.admin .table_a tr:first-child {border-top: 1px solid #000;}
+.admin .table_a tr th {padding: 10px 12px;border-bottom: 1px solid #ddd;border-left: 1px solid #ddd;text-align: left;background-color: #f4f4f6;}
+.admin .table_a tr:first-child {border-top: 1px solid #aaa;}
 .admin .table_a tr th:first-child {border-left: none;}
 .admin .table_a tr td {padding: 10px 12px;border-bottom: 1px solid #ddd;}
 .admin .table_a tr td.center {text-align: center;}
@@ -153,6 +156,7 @@ box-shadow: 3px 0 10px 0 rgba(0, 0, 0, 0.10);}
 .admin .table_b tr th {padding: 8px 12px;border-bottom: 1px solid #ddd;background: #f4f4f5;    border-top: 1px solid #000;}
 .admin .table_b tr td {padding: 8px 12px;border-bottom: 1px solid #ddd;text-align: center;}
 .admin .table_b tr td.tal {text-align: left;}
+.admin .table_b tr td.tal_center {text-align: center;}
 .admin table tr td.td_big {height: 200px;overflow-y: scroll;}
 
 .admin .table_c {width: 100%;border-collapse: collapse;border-top: 1px solid #a8a8a8;}
@@ -236,7 +240,7 @@ font-size: 0.7rem;cursor: pointer;padding: 0;display: flex;align-items: center;j
 .admin .modal_btn_wrap {text-align: center;margin:30px 0 0;}
 
 /* pagenation */
-.admin .pagenation {margin:60px 0 0;}
+.admin .pagenation {margin:20px 0 0;}
 .admin .pagenation ul {display: flex;gap:8px;justify-content: center;}
 .admin .pagenation ul li a {width: 32px;height: 32px;display: block;text-align: center;line-height: 32px;border-radius: 5px;color: #818181;}
 .admin .pagenation ul li a.active {background: var(--color-primary);color: var(--color-foreground);font-weight: 700;}
