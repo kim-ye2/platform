@@ -144,6 +144,7 @@ box-shadow: 3px 0 10px 0 rgba(0, 0, 0, 0.10);}
 .admin .pend{color: #aa0000;font-weight: 600;}
 .admin .reject{color: #aa0000;font-weight: 600;}
 .admin .table_wrap {overflow-x: auto;}
+.admin .table_wrap > div {margin:0 0 30px 0;}
 .admin .scroll-y {overflow-y: auto;height: 60vh;}
 .admin table {width: 100%;margin:0 0 10px 0;}
 .admin .table_a.table_a_double td {width: 84%;}
