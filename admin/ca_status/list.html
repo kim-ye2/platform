@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <link href="/favicon.ico" rel="icon">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Platform - Admin</title>
+    <meta content="" name="keywords" />
+    <meta content="website" property="og:type">
+    <meta content="template" property="og:url">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <!-- css -->
+    <link rel="stylesheet" crossorigin="" href="../css/default.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0"
+        rel="stylesheet" />
+    <!-- jq -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            function bindPcNavHover() {
+                const isPc = $(window).width() >= 720;
+
+                if (isPc) {
+                    $('.nav_1depth')
+                        .off('.pcNav')
+                        .on('mouseenter.pcNav', function () {
+                            $(this).children('.nav_2depth').stop(true, true).slideDown(200);
+                        })
+                        .on('mouseleave.pcNav', function () {
+                            $(this).children('.nav_2depth').stop(true, true).slideUp(200);
+                        });
+                } else {
+                    $('.nav_1depth').off('.pcNav');
+                    $('.nav_2depth').removeAttr('style');
+                }
+            }
+
+            bindPcNavHover();
+            $(window).on('resize', bindPcNavHover);
+
+            $('body').removeClass('no-scroll');
+            $('.nav_open').click(function () {
+                $(this).toggleClass('active');
+                $('nav > ul').toggleClass('open');
+
+                if ($(this).hasClass('active')) {
+                    $('body').addClass('no-scroll');
+                } else {
+                    $('body').removeClass('no-scroll');
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="admin">
+            <div class="cont">
+                <div class="lnb">
+
+                    <h1 class="logo"><img src="../images/logo.svg" alt=""></h1>
+
+                    <div class="logout">
+                        <p>관리자(admin)</p>
+                        <button class="btn_under">로그아웃</button>
+                    </div>
+
+                    <ul>
+                        <li class="lnb_1depth">
+                            <a href="">홈</a>
+                        </li>
+                        <li class="lnb_1depth">
+                            <a href="/admin/user/list.html">사용자 관리</a>
+                        </li>
+                        <li class="lnb_1depth">
+                            <a href="/admin/agency/list.html">대리점 관리</a>
+                        </li>
+                        <li class="lnb_1depth">
+                            <a href="/admin/worker/list.html">작업자 관리</a>
+                        </li>
+                        <li class="lnb_1depth">
+                            <a href="/admin/client/list.html">고객사 관리</a>
+                        </li>
+                        <li class="lnb_1depth active">
+                            <a href="/admin/ca_status/list.html">고객사-대리점 현황</a>
+                        </li>
+                        <li class="lnb_1depth">
+                            <a href="">영업권 신청현황</a>
+                        </li>
+                        <li class="lnb_1depth">
+                            <a href="">계약 관리</a>
+                        </li>
+                        <li class="lnb_1depth">
+                            <a href="">영업권역 관리</a>
+                        </li>
+                        <li class="lnb_1depth">
+                            <a href="">장비관리</a>
+                        </li>
+                        <li class="lnb_1depth">
+                            <a href="">장비 임대 현황</a>
+                        </li>
+                        <li class="lnb_1depth">
+                            <a href="">게시판 관리</a>
+                        </li>
+                        <li class="lnb_1depth">
+                            <a href="">1:1문의 관리</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="content">
+                    <h3 class="adm_title">고객사-대리점 현황</h3>
+
+                    <div class="search">
+                        <div class="search_input">
+                            <h5>권역</h5>
+                            <select name="" id="">
+                                <option value="">전체</option>
+                                <option value="">서울</option>
+                                <option value="">경기</option>
+                                <option value="">인천</option>
+                            </select>
+                            <select name="" id="">
+                                <option value="">전체</option>
+                                <option value="">마포구</option>
+                                <option value="">은평구</option>
+                                <option value="">강서구</option>
+                                <option value="">양천구</option>
+                                <option value="">구로구</option>
+                            </select>
+                        </div>
+                        <div class="search_input">
+                            <h5>고객사</h5>
+                            <div class="flex">
+                                <p  class="scope">
+                                    <input type="text">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 12 12" fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.91999 1.0125C3.87299 1.1085 2.97349 1.525 2.24949 2.2495C1.59649 2.9025 1.19549 3.693 1.04649 4.6225C1.00049 4.9085 1.00049 5.5915 1.04649 5.8775C1.19549 6.807 1.59649 7.5975 2.24949 8.2505C2.89999 8.9015 3.69599 9.305 4.62249 9.4535C4.90849 9.4995 5.59149 9.4995 5.87749 9.4535C6.55935 9.34607 7.20632 9.07954 7.76599 8.6755L7.88149 8.59301L8.83599 9.5435C9.69299 10.398 9.79999 10.498 9.88849 10.527C10.2945 10.662 10.6615 10.302 10.53 9.8975C10.497 9.7965 10.4355 9.73051 9.54399 8.83601L8.59299 7.8815L8.67549 7.766C9.07953 7.20633 9.34606 6.55937 9.45349 5.8775C9.49949 5.5915 9.49949 4.9085 9.45349 4.6225C9.30499 3.696 8.90149 2.9 8.25049 2.2495C7.61261 1.60546 6.78384 1.18458 5.88749 1.0495C5.69199 1.0195 5.09399 0.996505 4.91999 1.0125ZM5.80049 2.0475C7.16799 2.296 8.19899 3.3295 8.45499 4.71C8.50099 4.9575 8.50099 5.5425 8.45499 5.79C8.19799 7.1755 7.17549 8.198 5.78999 8.455C5.54249 8.501 4.95749 8.501 4.70999 8.455C3.45799 8.2225 2.47599 7.345 2.13049 6.1505C1.96653 5.582 1.96125 4.97947 2.11523 4.40818C2.2692 3.83689 2.57655 3.31862 3.00399 2.9095C3.49969 2.43121 4.13459 2.12286 4.81699 2.029C5.05599 1.995 5.56199 2.0045 5.80049 2.0475Z" fill="#CCCCCC"/>
+                                        </svg>                                    
+                                </p>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="search_input">
+                            <h5>대리점</h5>
+                            <div class="flex">
+                                 <p  class="scope">
+                                    <input type="text">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 12 12" fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.91999 1.0125C3.87299 1.1085 2.97349 1.525 2.24949 2.2495C1.59649 2.9025 1.19549 3.693 1.04649 4.6225C1.00049 4.9085 1.00049 5.5915 1.04649 5.8775C1.19549 6.807 1.59649 7.5975 2.24949 8.2505C2.89999 8.9015 3.69599 9.305 4.62249 9.4535C4.90849 9.4995 5.59149 9.4995 5.87749 9.4535C6.55935 9.34607 7.20632 9.07954 7.76599 8.6755L7.88149 8.59301L8.83599 9.5435C9.69299 10.398 9.79999 10.498 9.88849 10.527C10.2945 10.662 10.6615 10.302 10.53 9.8975C10.497 9.7965 10.4355 9.73051 9.54399 8.83601L8.59299 7.8815L8.67549 7.766C9.07953 7.20633 9.34606 6.55937 9.45349 5.8775C9.49949 5.5915 9.49949 4.9085 9.45349 4.6225C9.30499 3.696 8.90149 2.9 8.25049 2.2495C7.61261 1.60546 6.78384 1.18458 5.88749 1.0495C5.69199 1.0195 5.09399 0.996505 4.91999 1.0125ZM5.80049 2.0475C7.16799 2.296 8.19899 3.3295 8.45499 4.71C8.50099 4.9575 8.50099 5.5425 8.45499 5.79C8.19799 7.1755 7.17549 8.198 5.78999 8.455C5.54249 8.501 4.95749 8.501 4.70999 8.455C3.45799 8.2225 2.47599 7.345 2.13049 6.1505C1.96653 5.582 1.96125 4.97947 2.11523 4.40818C2.2692 3.83689 2.57655 3.31862 3.00399 2.9095C3.49969 2.43121 4.13459 2.12286 4.81699 2.029C5.05599 1.995 5.56199 2.0045 5.80049 2.0475Z" fill="#CCCCCC"/>
+                                        </svg>                                    
+                                </p>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <button class="btn_md">조회</button>
+                    </div>
+
+                    <div class="conarea">
+                        <div class="top_btn">
+                            <p class="caption">고객사-대리점 리스트 (총 75건)</p>
+                        </div>
+                        <div class="table_wrap">
+                            <table class="table_b tb_list">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2">No</th>
+                                        <th rowspan="2">권역</th>
+                                        <th rowspan="2">영업권<br>이관여부</th>
+                                        <th colspan="4">고객사 정보</th>
+                                        <th colspan="3">기존 대리점 정보</th>
+                                        <th colspan="3">이관 대리점 정보</th>
+                                        <th rowspan="2">특이사항</th>
+                                    </tr>
+                                    <tr>
+                                        <th>고객사코드</th>
+                                        <th>고객사명</th>
+                                        <th>사업자번호</th>
+                                        <th>대표자명</th>
+                                        <th>대리점코드</th>
+                                        <th>대리점명</th>
+                                        <th class="br">수수료율</th>
+                                        <th>대리점코드</th>
+                                        <th>대리점명</th>
+                                        <th class="br">수수료율</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>서울 &gt; 마포구</td>
+                                        <td>N</td>
+                                        <td></td>
+                                        <td><a href="" class="btn_under">테슬라</a></td>
+                                        <td>111-22-33333</td>
+                                        <td>알론머스크</td>
+                                        <td>AA0910</td>
+                                        <td>A대리점</td>
+                                        <td>80%</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>서울 &gt; 마포구</td>
+                                        <td>Y</td>
+                                        <td></td>
+                                        <td><a href="" class="btn_under">애플</a></td>
+                                        <td>123-45-67890</td>
+                                        <td>홍길동</td>
+                                        <td>AA0910</td>
+                                        <td>A대리점</td>
+                                        <td>4%</td>
+                                        <td>ZQ1111</td>
+                                        <td>Q대리점</td>
+                                        <td>76%</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>서울 &gt; 은평구</td>
+                                        <td>N</td>
+                                        <td></td>
+                                        <td><a href="" class="btn_under">MS</a></td>
+                                        <td>135-79-24680</td>
+                                        <td>홍길동</td>
+                                        <td>AB0512</td>
+                                        <td>B대리점</td>
+                                        <td>80%</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>서울 &gt; 강서구</td>
+                                        <td>N</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>AC1151</td>
+                                        <td>C대리점</td>
+                                        <td>80%</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>서울 &gt; 양천구</td>
+                                        <td>Y</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>AD1581</td>
+                                        <td>D대리점</td>
+                                        <td>10%</td>
+                                        <td>ZQ1111</td>
+                                        <td>Q대리점</td>
+                                        <td>70%</td>
+                                        <td>수수료 조정으로 기존 대리점 10% 수수료</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>서울 &gt; 구로구</td>
+                                        <td>N</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>AE1581</td>
+                                        <td>E대리점</td>
+                                        <td>4%</td>
+                                        <td>ZQ1111</td>
+                                        <td>Q대리점</td>
+                                        <td>76%</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="pagenation">
+                        <ul>
+                            <li class="arrow"><a href="?page=1">« 처음</a></li>
+                            <li class="arrow"><a href="?page=prev">‹ 이전</a></li>
+                            <li><a href="?page=1" class="active">1</a></li>
+                            <li><a href="?page=2">2</a></li>
+                            <li><a href="?page=3">3</a></li>
+                            <li><a href="?page=4">4</a></li>
+                            <li><a href="?page=5">5</a></li>
+                            <li><a href="?page=6">6</a></li>
+                            <li><a href="?page=7">7</a></li>
+                            <li class="arrow"><a href="?page=next">다음 ›</a></li>
+                            <li class="arrow"><a href="?page=10">마지막 »</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
