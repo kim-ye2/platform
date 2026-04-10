@@ -57,102 +57,101 @@
                     </div>
                     <ul>
                         <li class="lnb_1depth"><a href="">홈</a></li>
-                        <li class="lnb_1depth "><a href="/admin/user/list.html">사용자 관리</a></li>
+                        <li class="lnb_1depth"><a href="/admin/user/list.html">사용자 관리</a></li>
                         <li class="lnb_1depth"><a href="/admin/agency/list.html">대리점 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/worker/list.html">작업자 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/client/list.html">고객사 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/ca_status/list.html">고객사-대리점 현황</a></li>
-                        <li class="lnb_1depth "><a href="/admin/distribution/list.html">영업권 신청현황</a></li>
-                        <li class="lnb_1depth "><a href="/admin/contract/list.html">계약 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/territory/list.html">영업권역 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/equip/list.html">장비 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/rent/list.html">장비 임대 현황</a></li>
-                        <li class="lnb_1depth active"><a href="/admin/board/list.html">게시판 관리</a></li>
-                        <li class="lnb_1depth"><a href="/admin/inquiry/list.html">1:1 문의 관리</a></li>
+                        <li class="lnb_1depth"><a href="/admin/worker/list.html">작업자 관리</a></li>
+                        <li class="lnb_1depth"><a href="/admin/client/list.html">고객사 관리</a></li>
+                        <li class="lnb_1depth"><a href="/admin/ca_status/list.html">고객사-대리점 현황</a></li>
+                        <li class="lnb_1depth"><a href="/admin/distribution/list.html">영업권 신청현황</a></li>
+                        <li class="lnb_1depth"><a href="/admin/contract/list.html">계약 관리</a></li>
+                        <li class="lnb_1depth"><a href="/admin/territory/list.html">영업권역 관리</a></li>
+                        <li class="lnb_1depth"><a href="/admin/equip/list.html">장비 관리</a></li>
+                        <li class="lnb_1depth"><a href="/admin/equip_rent/list.html">장비 임대 현황</a></li>
+                        <li class="lnb_1depth"><a href="/admin/board/list.html">게시판 관리</a></li>
+                        <li class="lnb_1depth active"><a href="/admin/inquiry/list.html">1:1 문의 관리</a></li>
                     </ul>
                 </div>
 
 
                 <div class="content">
-                    <h3 class="adm_title">게시판 작성</h3>
+                    <h3 class="adm_title">1:1문의 관리</h3>
                     
                     <div class="conarea">
                         <div class="table_wrap">
+                            <div>
+                                <table class="table_a">
+                                    <colgroup>
+                                        <col width="15%">
+                                        <col width="35%">
+                                        <col width="15%">
+                                        <col width="35%">
+                                    </colgroup>
+                                    <tr>
+                                        <th>문의유형</th>
+                                        <td colspan="3">영업권 관련</td>
+                                    </tr>
+                                    <tr>
+                                        <th>제목</th>
+                                        <td colspan="3">서울 > 강북구 영업권 획득을 하려면 어떤 절차로 진행이 될까요?</td>
+                                    </tr>
+                                    <tr>
+                                        <th>등록자(대리점)</th>
+                                        <td>김담당(삼성전자)</td>
+                                        <th>등록일</th>
+                                        <td>2026.03.28</td>
+                                    </tr>
+                                    <tr>
+                                        <th>질문</th>
+                                        <td colspan="3">
+                                        이런저런 질문입니다.<br/>
+                                        빠른 답변을 원합니다.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>파일첨부</th>
+                                        <td colspan="3">
+                                            <div class="file_wrap">
+                                                <div class="file_row">
+                                                    <button class="btn_sm">파일명.jpg</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
 
-                            <table class="table_a">
-                                <colgroup>
-                                    <col width="15%">
-                                    <col width="35%">
-                                    <col width="15%">
-                                    <col width="35%">
-                                </colgroup>
-                                <tr>
-                                    <th>유형</th>
-                                    <td colspan="3"> 
-                                        <div class="btn_group_toggle">
-                                            <button class="on">공지사항</button>
-                                            <button>자료실</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>제목</th>
-                                    <td colspan="3"><input type="text" class="wfull"></td>
-                                </tr>
-                                <tr>
-                                    <th>중요여부</th>
-                                    <td>
-                                        <div class="checkbox">
-                                            <div>
-                                                <input type="radio" name="import" id="import_n" checked>
-                                                <label for="import_n">일반</label>
-                                            </div>
-                                            <div>
-                                                <input type="radio" name="import" id="import_y">
-                                                <label for="import_y">중요</label>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <th>공개여부</th>
-                                    <td>
-                                        <div class="checkbox">
-                                            <div>
-                                                <input type="radio" name="open" id="openT" checked>
-                                                <label for="openT">공개</label>
-                                            </div>
-                                            <div>
-                                                <input type="radio" name="open" id="openF">
-                                                <label for="openF">비공개</label>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>내용</th>
-                                    <td colspan="3">
-                                        <!-- 스마트에디터 필요 -->
+                            <div>
+                                <table class="table_a">
+                                    <colgroup>
+                                        <col width="15%">
+                                        <col width="*">
+                                    </colgroup>
+                                    <tr>
+                                        <th>답변</th>
+                                        <td colspan="3">
+                                            <!-- 스마트에디터 필요 -->
                                         <textarea name="" id=""></textarea>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>파일첨부</th>
-                                    <td colspan="3">
-                                        <div class="file_wrap">
-                                            <div class="file_row">
-                                                <input type="file">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>파일첨부</th>
+                                        <td colspan="3">
+                                           <div class="file_wrap">
+                                                <div class="file_row">
+                                                    <input type="file">
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
-                        
+                    </div>
+                    
                     <div class="modal_btn_wrap">
                         <button class="btn_md gray">취소</button>
                         <button class="btn_md">저장</button>
                     </div>
-                    </div>
-                    
                 </div>
             </div>
         </div>

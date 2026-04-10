@@ -55,61 +55,62 @@
                         <p>관리자(admin)</p>
                         <button class="btn_under">로그아웃</button>
                     </div>
+                  
                     <ul>
                         <li class="lnb_1depth"><a href="">홈</a></li>
-                        <li class="lnb_1depth "><a href="/admin/user/list.html">사용자 관리</a></li>
+                        <li class="lnb_1depth"><a href="/admin/user/list.html">사용자 관리</a></li>
                         <li class="lnb_1depth"><a href="/admin/agency/list.html">대리점 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/worker/list.html">작업자 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/client/list.html">고객사 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/ca_status/list.html">고객사-대리점 현황</a></li>
-                        <li class="lnb_1depth "><a href="/admin/distribution/list.html">영업권 신청현황</a></li>
-                        <li class="lnb_1depth "><a href="/admin/contract/list.html">계약 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/territory/list.html">영업권역 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/equip/list.html">장비 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/rent/list.html">장비 임대 현황</a></li>
-                        <li class="lnb_1depth active"><a href="/admin/board/list.html">게시판 관리</a></li>
-                        <li class="lnb_1depth"><a href="/admin/inquiry/list.html">1:1 문의 관리</a></li>
+                        <li class="lnb_1depth"><a href="/admin/worker/list.html">작업자 관리</a></li>
+                        <li class="lnb_1depth"><a href="/admin/client/list.html">고객사 관리</a></li>
+                        <li class="lnb_1depth"><a href="/admin/ca_status/list.html">고객사-대리점 현황</a></li>
+                        <li class="lnb_1depth"><a href="/admin/distribution/list.html">영업권 신청현황</a></li>
+                        <li class="lnb_1depth"><a href="/admin/contract/list.html">계약 관리</a></li>
+                        <li class="lnb_1depth"><a href="/admin/territory/list.html">영업권역 관리</a></li>
+                        <li class="lnb_1depth"><a href="/admin/equip/list.html">장비 관리</a></li>
+                        <li class="lnb_1depth"><a href="/admin/equip_rent/list.html">장비 임대 현황</a></li>
+                        <li class="lnb_1depth"><a href="/admin/board/list.html">게시판 관리</a></li>
+                        <li class="lnb_1depth active"><a href="/admin/inquiry/list.html">1:1 문의 관리</a></li>
                     </ul>
                 </div>
 
                 <div class="content">
-                    <h3 class="adm_title">게시판 관리</h3>
+                    <h3 class="adm_title">1:1 문의 관리</h3>
 
                     <div class="search">
                         <div class="search_input">
-                            <h5>유형</h5>
+                            <h5>문의유형</h5>
                             <select name="" id="">
                                 <option value="">전체</option>
-                                <option value="">공지사항</option>
-                                <option value="">자료실</option>
+                                <option value="">장비 관련</option>
+                                <option value="">계약 관련</option>
+                                <option value="">영업권 관련</option>
                             </select>
                         </div>
                         <div class="search_input">
-                            <h5>중요여부</h5>
+                            <h5>답변여부</h5>
                             <select name="" id="">
                                 <option value="">전체</option>
-                                <option value="">중요</option>
-                                <option value="">일반</option>
+                                <option value="">답변대기</option>
+                                <option value="">답변완료</option>
                             </select>
                         </div>
                         <div class="search_input">
-                            <h5>공개여부</h5>
-                            <select name="" id="">
-                                <option value="">전체</option>
-                                <option value="">공개</option>
-                                <option value="">비공개</option>
-                            </select>
-                        </div>
-                        <div class="search_input">
-                            <h5>제목</h5>
-                            <input type="text">
+                            <h5>검색</h5>
+                            <div class="flex">
+                                <select name="" id="">
+                                    <option value="">등록자</option>
+                                    <option value="">제목</option>
+                                    <option value="">대리점</option>
+                                </select>
+                                <input type="text">
+                            </div>
                         </div>
                         <div class="search_input">
                             <h5>등록일</h5>
                             <div class="flex">
-                                <input type="date" >
+                                <input type="date">
                                 ~
-                                <input type="date" >
+                                <input type="date">
                             </div>
                         </div>
                         <button class="btn_md">조회</button>
@@ -118,54 +119,61 @@
                     <div class="conarea">
                         <div class="top_btn">
                             <p class="caption">게시글 리스트 (총 75건)</p>
-                            <div class="btn_wrap">
-                                <a href="write.html" class="btn_sm">신규등록</a>
-                            </div>
                         </div>
                         <div class="table_wrap">
                             <table class="table_b tb_list">
                                 <colgroup>
                                     <col width="55px">
-                                    <col width="100px">
-                                    <col width="*">
-                                    <col width="100px">
-                                    <col width="100px">
-                                    <col width="100px">
                                     <col width="110px">
-                                    <col width="80px">
+                                    <col width="*">
+                                    <col width="110px">
+                                    <col width="90px">
+                                    <col width="110px">
+                                    <col width="90px">
+                                    <col width="110px">
                                 </colgroup>
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>유형</th>
+                                        <th>문의유형</th>
                                         <th>제목</th>
-                                        <th>중요여부</th>
-                                        <th>공개여부</th>
+                                        <th>대리점</th>
                                         <th>등록자</th>
                                         <th>등록일</th>
-                                        <th>조회수</th>
+                                        <th>답변자</th>
+                                        <th>답변일</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td>공지사항</td>
-                                        <td><a href="view.html" class="btn_under">공지사항에 등록된 게시글 제목입니다.</a></td>
-                                        <td>중요</td>
-                                        <td>공개</td>
-                                        <td>관리자</td>
+                                        <td>장비 관련</td>
+                                        <td><a href="view.html" class="btn_under">장비관련하여 언제 답변을 받나요?</a></td>
+                                        <td>삼성전자</td>
+                                        <td>김담당</td>
                                         <td>2026.03.28</td>
-                                        <td>73</td>
+                                        <td>-</td>
+                                        <td>-</td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
-                                        <td>자료실</td>
-                                        <td><a href="view.html" class="btn_under">자료실에 등록된 게시글 제목입니다.</a></td>
-                                        <td>일반</td>
-                                        <td>비공개</td>
-                                        <td>최고관리자</td>
-                                        <td>2026.03.28</td>
-                                        <td>275</td>
+                                        <td>계약 관련</td>
+                                        <td><a href="view.html" class="btn_under">계약관련 질문이 있습니다.</a></td>
+                                        <td>테슬라</td>
+                                        <td>이진지</td>
+                                        <td>2026.03.01</td>
+                                        <td>관리자</td>
+                                        <td>2026.03.25</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>영업권 관련</td>
+                                        <td><a href="view.html" class="btn_under">영업관련 질문입니다.</a></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                 </tbody>
                             </table>

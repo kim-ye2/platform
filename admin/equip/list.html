@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <link href="/favicon.ico" rel="icon">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Platform - Admin</title>
+    <meta content="" name="keywords" />
+    <meta content="website" property="og:type">
+    <meta content="template" property="og:url">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <!-- css -->
+    <link rel="stylesheet" crossorigin="" href="../css/default.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0"
+        rel="stylesheet" />
+    <!-- jq -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            function bindPcNavHover() {
+                const isPc = $(window).width() >= 720;
+                if (isPc) {
+                    $('.nav_1depth')
+                        .off('.pcNav')
+                        .on('mouseenter.pcNav', function () {
+                            $(this).children('.nav_2depth').stop(true, true).slideDown(200);
+                        })
+                        .on('mouseleave.pcNav', function () {
+                            $(this).children('.nav_2depth').stop(true, true).slideUp(200);
+                        });
+                } else {
+                    $('.nav_1depth').off('.pcNav');
+                    $('.nav_2depth').removeAttr('style');
+                }
+            }
+
+            bindPcNavHover();
+            $(window).on('resize', bindPcNavHover);
+
+            $('body').removeClass('no-scroll');
+            $('.nav_open').click(function () {
+                $(this).toggleClass('active');
+                $('nav > ul').toggleClass('open');
+                if ($(this).hasClass('active')) {
+                    $('body').addClass('no-scroll');
+                } else {
+                    $('body').removeClass('no-scroll');
+                }
+            });
+
+            /* 리스트 행 클릭 시 우측 장비 정보 패널 반영 */
+            $('#tbl_equip tbody tr').click(function () {
+                $('#tbl_equip tbody tr').removeClass('selected');
+                $(this).addClass('selected');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="admin">
+            <div class="cont">
+                <div class="lnb">
+                     <h1 class="logo">플랫폼로고</h1>
+                    <div class="logout">
+                        <p>관리자(admin)</p>
+                        <button class="btn_under">로그아웃</button>
+                    </div>
+                    <ul>
+                        <li class="lnb_1depth"><a href="">홈</a></li>
+                        <li class="lnb_1depth "><a href="/admin/user/list.html">사용자 관리</a></li>
+                        <li class="lnb_1depth"><a href="/admin/agency/list.html">대리점 관리</a></li>
+                        <li class="lnb_1depth "><a href="/admin/worker/list.html">작업자 관리</a></li>
+                        <li class="lnb_1depth"><a href="/admin/client/list.html">고객사 관리</a></li>
+                        <li class="lnb_1depth"><a href="/admin/ca_status/list.html">고객사-대리점 현황</a></li>
+                        <li class="lnb_1depth"><a href="/admin/distribution/list.html">영업권 신청현황</a></li>
+                        <li class="lnb_1depth"><a href="/admin/contract/list.html">계약 관리</a></li>
+                        <li class="lnb_1depth "><a href="/admin/territory/list.html">영업권역 관리</a></li>
+                        <li class="lnb_1depth active"><a href="/admin/equip/list.html">장비 관리</a></li>
+                        <li class="lnb_1depth "><a href="/admin/rent/list.html">장비 임대 현황</a></li>
+                        <li class="lnb_1depth"><a href="/admin/board/list.html">게시판 관리</a></li>
+                        <li class="lnb_1depth"><a href="/admin/inquiry/list.html">1:1 문의 관리</a></li>
+                    </ul>
+                </div>
+
+                <div class="content">
+                    <h3 class="adm_title">장비 관리</h3>
+
+                    <!-- 검색 영역 -->
+                    <div class="search">
+                        <div class="search_input">
+                            <h5>구분</h5>
+                            <select name="" id="">
+                                <option value="">전체</option>
+                                <option value="">고압세척기</option>
+                                <option value="">진공흡입기</option>
+                                <option value="">약품분무기</option>
+                                <option value="">열화상카메라</option>
+                                <option value="">집진기</option>
+                            </select>
+                        </div>
+                        <div class="search_input">
+                            <h5>장비상태</h5>
+                            <select name="" id="">
+                                <option value="">전체</option>
+                                <option value="">대여가능</option>
+                                <option value="">임대중</option>
+                                <option value="">A/S 접수</option>
+                                <option value="">A/S 수리중</option>
+                                <option value="">폐기</option>
+                            </select>
+                        </div>
+                        <div class="search_input">
+                            <h5>사용여부</h5>
+                            <select name="" id="">
+                                <option value="">전체</option>
+                                <option value="">사용</option>
+                                <option value="">미사용</option>
+                            </select>
+                        </div>
+                        <button class="btn_md">조회</button>
+                    </div>
+
+                    <!-- 리스트 + 정보 패널 -->
+                    <div class="conarea_flex">
+
+                        <!-- 장비 리스트 -->
+                        <div class="conarea w60">
+                            <div class="top_btn">
+                                <p class="caption">장비 리스트 (총 75건)</p>
+                            </div>
+                            <div class="table_wrap scroll-y">
+                                <table class="table_b tb_list">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>구분</th>
+                                            <th>장비번호</th>
+                                            <th>장비상태</th>
+                                            <th>사용여부</th>
+                                            <th>등록일</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>고압세척기</td>
+                                            <td>EQ001_15211</td>
+                                            <td>대여가능</td>
+                                            <td>사용</td>
+                                            <td>2026.03.23</td>
+                                            <td><button class="btn_sm" onclick="modalOpen('equip_history')">임대/고장이력</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>고압세척기</td>
+                                            <td>EQ001_15212</td>
+                                            <td>임대중</td>
+                                            <td>사용</td>
+                                            <td>2026.03.23</td>
+                                            <td><button class="btn_sm" onclick="modalOpen('equip_history')">임대/고장이력</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>고압세척기</td>
+                                            <td>EQ001_15213</td>
+                                            <td>A/S 접수</td>
+                                            <td>사용</td>
+                                            <td>2026.03.23</td>
+                                            <td><button class="btn_sm" onclick="modalOpen('equip_history')">임대/고장이력</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>진공흡입기</td>
+                                            <td></td>
+                                            <td>A/S 수리중</td>
+                                            <td>사용</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>약품분무기</td>
+                                            <td></td>
+                                            <td>폐기</td>
+                                            <td>미사용</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>열화상카메라</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>집진기</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- 장비 정보 패널 -->
+                        <div class="conarea w40">
+                            <div class="top_btn">
+                                <p class="caption">장비 정보</p>
+                                <div class="btn_wrap">
+                                    <a href="write.html" class="btn_sm">신규등록</a>
+                                </div>
+                            </div>
+                            <table class="table_a">
+                                <colgroup>
+                                    <col width="30%">
+                                    <col width="70%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>장비번호</th>
+                                        <td><input type="text" class="wfull"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>구분</th>
+                                        <td>
+                                            <select name="" id="" class="wfull">
+                                                <option value="">선택</option>
+                                                <option value="">고압세척기</option>
+                                                <option value="">진공흡입기</option>
+                                                <option value="">약품분무기</option>
+                                                <option value="">열화상카메라</option>
+                                                <option value="">집진기</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>장비상태</th>
+                                        <td>
+                                            <select name="" id="" class="wfull">
+                                                <option value="">선택</option>
+                                                <option value="">대여가능</option>
+                                                <option value="">임대중</option>
+                                                <option value="">A/S 접수</option>
+                                                <option value="">A/S 수리중</option>
+                                                <option value="">폐기</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>사용여부</th>
+                                        <td>
+                                            <select name="" id="" class="wfull">
+                                                <option value="">선택</option>
+                                                <option value="">사용</option>
+                                                <option value="">미사용</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>등록일</th>
+                                        <td><input type="text" class="wfull"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="modal_btn_wrap">
+                                <button class="btn_md">저장</button>
+                            </div>
+                        </div>
+
+                    </div><!-- /conarea_flex -->
+
+                </div><!-- /content -->
+            </div><!-- /cont -->
+
+
+
+            <!-- 장비 임대/고장이력 모달-->
+            <div class="modal_wrap" id="equip_history">
+                <div class="modal">
+
+                    <h3 class="adm_title">장비 임대/고장이력</h3>
+
+                    <!-- 장비 기본 정보 -->
+                    <div>
+                        <table class="table_a">
+                            <colgroup>
+                                <col width="20%">
+                                <col width="30%">
+                                <col width="20%">
+                                <col width="30%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>구분</th>
+                                    <td>고압세척기</td>
+                                    <th>장비번호</th>
+                                    <td>EQ001_15211</td>
+                                </tr>
+                                <tr>
+                                    <th>장비상태</th>
+                                    <td>대여가능</td>
+                                    <th>사용여부</th>
+                                    <td>사용</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 임대이력 -->
+                    <div>
+                        <h4 class="adm_subtitle">임대이력</h4>
+                        <table class="table_b">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>임대 대리점</th>
+                                    <th>임대 신청일</th>
+                                    <th>임대 기간</th>
+                                    <th>반납일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>삼성전자</td>
+                                    <td>2025.01.01</td>
+                                    <td>2025.01.05 ~ 2025.02.28</td>
+                                    <td>2025.02.28</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>테슬라</td>
+                                    <td>2025.03.31</td>
+                                    <td>2025.03.31 ~ 2025.04.05</td>
+                                    <td>2025.04.03</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>YMCA</td>
+                                    <td>2026.01.03</td>
+                                    <td>2026.01.03 ~ 2026.01.31</td>
+                                    <td>2026.01.31</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>현대자동차</td>
+                                    <td>2026.03.27</td>
+                                    <td>2026.03.28 ~ 2026.12.31</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 고장이력 -->
+                    <div>
+                        <h4 class="adm_subtitle">고장이력</h4>
+                        <table class="table_b">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>접수 대리점</th>
+                                    <th>고장 접수일</th>
+                                    <th>대체 장비번호</th>
+                                    <th>A/S 완료일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>테슬라</td>
+                                    <td>2026.04.02</td>
+                                    <td>EQ001_15212</td>
+                                    <td>2026.04.13</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="modal_btn_wrap">
+                        <button class="btn_md gray" onclick="document.getElementById('equip_history').style.display='none'">확인</button>
+                    </div>
+
+                </div>
+            </div><!-- /modal equip_history -->
+
+        </div><!-- /admin -->
+    </div><!-- /wrap -->
+
+    <script>
+        function modalOpen(id) {
+            document.querySelectorAll('.modal_wrap').forEach(m => m.style.display = 'none');
+            document.getElementById(id).style.display = 'flex';
+        }
+
+        document.querySelectorAll('.modal_wrap').forEach(function(wrap) {
+            wrap.addEventListener('click', function(e) {
+                if (e.target === wrap) {
+                    wrap.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

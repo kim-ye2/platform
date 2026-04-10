@@ -22,6 +22,7 @@
 .admin .text_blue {color: #2100dd;}
 .admin .text_green {color:#00911f;}
 
+button:disabled{background:#ccc !important;cursor:not-allowed;}
 
 /* input */
 .admin input[type=text],
@@ -122,7 +123,7 @@ animation: modalSlideUp 0.28s cubic-bezier(0.34, 1.20, 0.64, 1);}
 .admin .cont {display: flex;}
 .admin .lnb {height:100vh;position: sticky;left:0;top:0;width:230px;background: #2C337D;
 box-shadow: 3px 0 10px 0 rgba(0, 0, 0, 0.10);}
-.admin .lnb .logo{height: 135px;background-color: #fff;display: flex;flex-direction: column;justify-content: center;align-items: center;}
+.admin .lnb .logo{height: 135px;background-color: #fff;display: flex;flex-direction: column;justify-content: center;align-items: center;font-size: 2rem;font-weight: 700;color: #181F48;}
 .admin .lnb .logout{display: flex; gap: 10px;justify-content: center;align-items: center;height: 50px;}
 .admin .lnb .logout p{color: #F5F9FF;}
 .admin .lnb .logout .btn_under{color: #F5F9FF;}
@@ -138,6 +139,7 @@ box-shadow: 3px 0 10px 0 rgba(0, 0, 0, 0.10);}
 
 .admin .content {padding: 40px 30px;width: calc(100% - 230px);background: #F5F9FF;display: flex;flex-direction: column;gap: 30px 0;;}
 .admin .adm_title {font-size: 2.5rem;font-weight: 600;color: #181F48;}
+.admin .modal .adm_title {font-size: 2rem;margin:0 0 20px 0;}
 .admin .adm_subtitle {font-size: 1.25rem;font-weight: 600;padding:0 16px;border-left: 6px solid #353535;margin:0 0 16px;line-height: 1;}
 
 .admin .appro{color: #2d4db8;font-weight: 600;}
@@ -154,7 +156,7 @@ box-shadow: 3px 0 10px 0 rgba(0, 0, 0, 0.10);}
 .admin .table_a tr td {padding: 10px 12px;border-bottom: 1px solid #ddd;}
 .admin .table_a tr td.center {text-align: center;}
 .admin .tb_list tr:hover{background-color:#f4f4f6;}
-.admin .table_b tr th {padding: 8px 12px;border-bottom: 1px solid #ddd;background: #f4f4f5;    border-top: 1px solid #000;border-right:1px solid #ddd;}
+.admin .table_b tr th {padding: 8px 12px;border-bottom: 1px solid #ddd;background: #f4f4f5;    border-top: 1px solid #aaa;border-right:1px solid #ddd;}
 .admin .table_b tr th:last-child{border-right: none;}
 .admin .table_b tr th.br{border-right:1px solid #ddd;}
 .admin .table_b tr td {padding: 8px 12px;border-bottom: 1px solid #ddd;text-align: center;}
@@ -172,6 +174,7 @@ box-shadow: 3px 0 10px 0 rgba(0, 0, 0, 0.10);}
 
 .admin .conarea{border-radius: 8px;border: 1px solid #DDD;background: #FFF;padding:30px 40px;}
 .admin .conarea.w60{width:60%}
+.admin .conarea.w50{width:calc(50% - 15px)}
 .admin .conarea.w40{width:calc(40% - 30px)}
 .admin .conarea_flex{display: flex;gap:30px;flex-wrap: wrap;}
 
@@ -226,7 +229,7 @@ font-size: 0.7rem;cursor: pointer;padding: 0;display: flex;align-items: center;j
 .banner_img_del:hover {background: #c00;}
 
 
-.admin .section_top_btn {display: flex;justify-content: flex-end;gap: 4px;margin: 0 0 6px;}
+.admin .section_top_btn {display: flex;justify-content: flex-end;gap: 4px;}
 .memphoto_area {display: flex;align-items: flex-end;gap: 12px;}
 .memphoto_area .photo_box {width: 80px;height: 100px;border: 1px solid #a8a8a8;display: flex;align-items: center;justify-content: center;background: #f2f2f2;overflow: hidden;border-radius: 4px;}
 .memphoto_area .photo_box svg {width: 40px;height: 40px;fill: #bbb;}
