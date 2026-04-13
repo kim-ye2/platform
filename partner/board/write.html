@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <link href="/favicon.ico" rel="icon">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Platform - Admin</title>
+    <meta content="" name="keywords" />
+    <meta content="website" property="og:type">
+    <meta content="template" property="og:url">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <link rel="stylesheet" crossorigin="" href="../css/default.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0"
+        rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            function bindPcNavHover() {
+                const isPc = $(window).width() >= 720;
+                if (isPc) {
+                    $('.nav_1depth').off('.pcNav')
+                        .on('mouseenter.pcNav', function () { $(this).children('.nav_2depth').stop(true, true).slideDown(200); })
+                        .on('mouseleave.pcNav', function () { $(this).children('.nav_2depth').stop(true, true).slideUp(200); });
+                } else {
+                    $('.nav_1depth').off('.pcNav');
+                    $('.nav_2depth').removeAttr('style');
+                }
+            }
+            bindPcNavHover();
+            $(window).on('resize', bindPcNavHover);
+            $('body').removeClass('no-scroll');
+            $('.nav_open').click(function () {
+                $(this).toggleClass('active');
+                $('nav > ul').toggleClass('open');
+                if ($(this).hasClass('active')) { $('body').addClass('no-scroll'); }
+                else { $('body').removeClass('no-scroll'); }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="admin">
+            <div class="cont">
+                <div class="lnb">
+                    <h1 class="logo">플랫폼로고</h1>
+                    <div class="logout">
+                        <p>관리자(admin)</p>
+                        <button class="btn_under">로그아웃</button>
+                    </div>
+                    <ul>
+                        <li class="lnb_1depth"><a href="">홈</a></li>
+                        <li class="lnb_1depth "><a href="/admin/user/list.html">사용자 관리</a></li>
+                        <li class="lnb_1depth"><a href="/admin/agency/list.html">대리점 관리</a></li>
+                        <li class="lnb_1depth "><a href="/admin/worker/list.html">작업자 관리</a></li>
+                        <li class="lnb_1depth "><a href="/admin/client/list.html">고객사 관리</a></li>
+                        <li class="lnb_1depth "><a href="/admin/ca_status/list.html">고객사-대리점 현황</a></li>
+                        <li class="lnb_1depth "><a href="/admin/distribution/list.html">영업권 신청현황</a></li>
+                        <li class="lnb_1depth "><a href="/admin/contract/list.html">계약 관리</a></li>
+                        <li class="lnb_1depth "><a href="/admin/territory/list.html">영업권역 관리</a></li>
+                        <li class="lnb_1depth "><a href="/admin/equip/list.html">장비 관리</a></li>
+                        <li class="lnb_1depth "><a href="/admin/rent/list.html">장비 임대 현황</a></li>
+                        <li class="lnb_1depth active"><a href="/admin/board/list.html">게시판 관리</a></li>
+                        <li class="lnb_1depth"><a href="/admin/inquiry/list.html">1:1 문의 관리</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="content">
+                    <h3 class="adm_title">게시판 작성</h3>
+                    
+                    <div class="conarea">
+                        <div class="table_wrap">
+
+                            <table class="table_a">
+                                <colgroup>
+                                    <col width="15%">
+                                    <col width="35%">
+                                    <col width="15%">
+                                    <col width="35%">
+                                </colgroup>
+                                <tr>
+                                    <th>유형</th>
+                                    <td colspan="3"> 
+                                        <div class="btn_group_toggle">
+                                            <button class="on">공지사항</button>
+                                            <button>자료실</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>제목</th>
+                                    <td colspan="3"><input type="text" class="wfull"></td>
+                                </tr>
+                                <tr>
+                                    <th>중요여부</th>
+                                    <td>
+                                        <div class="checkbox">
+                                            <div>
+                                                <input type="radio" name="import" id="import_n" checked>
+                                                <label for="import_n">일반</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" name="import" id="import_y">
+                                                <label for="import_y">중요</label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <th>공개여부</th>
+                                    <td>
+                                        <div class="checkbox">
+                                            <div>
+                                                <input type="radio" name="open" id="openT" checked>
+                                                <label for="openT">공개</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" name="open" id="openF">
+                                                <label for="openF">비공개</label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>내용</th>
+                                    <td colspan="3">
+                                        <!-- 스마트에디터 필요 -->
+                                        <textarea name="" id=""></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>파일첨부</th>
+                                    <td colspan="3">
+                                        <div class="file_wrap">
+                                            <div class="file_row">
+                                                <input type="file">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                    <div class="modal_btn_wrap">
+                        <button class="btn_md gray">취소</button>
+                        <button class="btn_md">저장</button>
+                    </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>
+<script>
+    function modalOpen(id) {
+        document.querySelectorAll('.modal_wrap').forEach(m => m.style.display = 'none');
+        document.getElementById(id).style.display = 'flex';
+    }
+
+    document.querySelectorAll('.modal_wrap').forEach(modal => {
+        modal.addEventListener('click', function(e){
+            if(e.target.classList.contains('modal_wrap')){
+                this.style.display = 'none';
+            }
+        });
+    });
+
+    // 파일 추가/삭제
+    document.addEventListener("click", function (e) {
+        if (e.target.classList.contains("btn_add")) {
+            const wrap = e.target.closest(".file_wrap");
+            const row = e.target.closest(".file_row");
+            const clone = row.cloneNode(true);
+            clone.querySelector("input").value = "";
+            if (!clone.querySelector(".btn_del")) {
+                const delBtn = document.createElement("button");
+                delBtn.type = "button";
+                delBtn.className = "btn_xs btn_line btn_del";
+                delBtn.textContent = "삭제";
+                clone.appendChild(delBtn);
+            }
+            wrap.appendChild(clone);
+        }
+
+        if (e.target.classList.contains("btn_del")) {
+            const row = e.target.closest(".file_row");
+            row.remove();
+        }
+    });
+
+    /* 토글 버튼 */
+    $(document).on('click', '.btn_group_toggle button', function () {
+        $(this).siblings().removeClass('on');
+        $(this).addClass('on');
+    });
+            
+
+</script>

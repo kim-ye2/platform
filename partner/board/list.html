@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <link href="/favicon.ico" rel="icon">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Platform - Admin</title>
+    <meta content="" name="keywords" />
+    <meta content="website" property="og:type">
+    <meta content="template" property="og:url">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <link rel="stylesheet" crossorigin="" href="../css/default.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0"
+        rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            function bindPcNavHover() {
+                const isPc = $(window).width() >= 720;
+                if (isPc) {
+                    $('.nav_1depth').off('.pcNav')
+                        .on('mouseenter.pcNav', function () { $(this).children('.nav_2depth').stop(true, true).slideDown(200); })
+                        .on('mouseleave.pcNav', function () { $(this).children('.nav_2depth').stop(true, true).slideUp(200); });
+                } else {
+                    $('.nav_1depth').off('.pcNav');
+                    $('.nav_2depth').removeAttr('style');
+                }
+            }
+            bindPcNavHover();
+            $(window).on('resize', bindPcNavHover);
+            $('body').removeClass('no-scroll');
+            $('.nav_open').click(function () {
+                $(this).toggleClass('active');
+                $('nav > ul').toggleClass('open');
+                if ($(this).hasClass('active')) { $('body').addClass('no-scroll'); }
+                else { $('body').removeClass('no-scroll'); }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="admin">
+            <div class="cont">
+                <div class="lnb">
+                    <h1 class="logo">플랫폼로고</h1>
+                    <div class="logout">
+                        <p>관리자(admin)</p>
+                        <button class="btn_under">로그아웃</button>
+                    </div>
+                    <ul>
+                        <li class="lnb_1depth"><a href="">홈</a></li>
+                        <li class="lnb_1depth "><a href="/admin/user/list.html">사용자 관리</a></li>
+                        <li class="lnb_1depth"><a href="/admin/agency/list.html">대리점 관리</a></li>
+                        <li class="lnb_1depth "><a href="/admin/worker/list.html">작업자 관리</a></li>
+                        <li class="lnb_1depth "><a href="/admin/client/list.html">고객사 관리</a></li>
+                        <li class="lnb_1depth "><a href="/admin/ca_status/list.html">고객사-대리점 현황</a></li>
+                        <li class="lnb_1depth "><a href="/admin/distribution/list.html">영업권 신청현황</a></li>
+                        <li class="lnb_1depth "><a href="/admin/contract/list.html">계약 관리</a></li>
+                        <li class="lnb_1depth "><a href="/admin/territory/list.html">영업권역 관리</a></li>
+                        <li class="lnb_1depth "><a href="/admin/equip/list.html">장비 관리</a></li>
+                        <li class="lnb_1depth "><a href="/admin/rent/list.html">장비 임대 현황</a></li>
+                        <li class="lnb_1depth active"><a href="/admin/board/list.html">게시판 관리</a></li>
+                        <li class="lnb_1depth"><a href="/admin/inquiry/list.html">1:1 문의 관리</a></li>
+                    </ul>
+                </div>
+
+                <div class="content">
+                    <h3 class="adm_title">게시판 관리</h3>
+
+                    <div class="search">
+                        <div class="search_input">
+                            <h5>유형</h5>
+                            <select name="" id="">
+                                <option value="">전체</option>
+                                <option value="">공지사항</option>
+                                <option value="">자료실</option>
+                            </select>
+                        </div>
+                        <div class="search_input">
+                            <h5>중요여부</h5>
+                            <select name="" id="">
+                                <option value="">전체</option>
+                                <option value="">중요</option>
+                                <option value="">일반</option>
+                            </select>
+                        </div>
+                        <div class="search_input">
+                            <h5>공개여부</h5>
+                            <select name="" id="">
+                                <option value="">전체</option>
+                                <option value="">공개</option>
+                                <option value="">비공개</option>
+                            </select>
+                        </div>
+                        <div class="search_input">
+                            <h5>제목</h5>
+                            <input type="text">
+                        </div>
+                        <div class="search_input">
+                            <h5>등록일</h5>
+                            <div class="flex">
+                                <input type="date" >
+                                ~
+                                <input type="date" >
+                            </div>
+                        </div>
+                        <button class="btn_md">조회</button>
+                    </div>
+
+                    <div class="conarea">
+                        <div class="top_btn">
+                            <p class="caption">게시글 리스트 (총 75건)</p>
+                            <div class="btn_wrap">
+                                <a href="write.html" class="btn_sm">신규등록</a>
+                            </div>
+                        </div>
+                        <div class="table_wrap">
+                            <table class="table_b tb_list">
+                                <colgroup>
+                                    <col width="55px">
+                                    <col width="100px">
+                                    <col width="*">
+                                    <col width="100px">
+                                    <col width="100px">
+                                    <col width="100px">
+                                    <col width="110px">
+                                    <col width="80px">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>유형</th>
+                                        <th>제목</th>
+                                        <th>중요여부</th>
+                                        <th>공개여부</th>
+                                        <th>등록자</th>
+                                        <th>등록일</th>
+                                        <th>조회수</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>공지사항</td>
+                                        <td><a href="view.html" class="btn_under">공지사항에 등록된 게시글 제목입니다.</a></td>
+                                        <td>중요</td>
+                                        <td>공개</td>
+                                        <td>관리자</td>
+                                        <td>2026.03.28</td>
+                                        <td>73</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>자료실</td>
+                                        <td><a href="view.html" class="btn_under">자료실에 등록된 게시글 제목입니다.</a></td>
+                                        <td>일반</td>
+                                        <td>비공개</td>
+                                        <td>최고관리자</td>
+                                        <td>2026.03.28</td>
+                                        <td>275</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="pagenation">
+                        <ul>
+                            <li class="arrow"><a href="?page=1">&lt;</a></li>
+                            <li class="arrow"><a href="?page=prev">&lt;&lt;</a></li>
+                            <li><a href="?page=1" class="active">1</a></li>
+                            <li><a href="?page=2">2</a></li>
+                            <li><a href="?page=3">3</a></li>
+                            <li><a href="?page=4">4</a></li>
+                            <li><a href="?page=5">5</a></li>
+                            <li class="arrow"><a href="?page=next">&gt;&gt;</a></li>
+                            <li class="arrow"><a href="?page=last">&gt;</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

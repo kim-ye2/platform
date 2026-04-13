@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <link href="/favicon.ico" rel="icon">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Platform - Admin</title>
+    <meta content="" name="keywords" />
+    <meta content="website" property="og:type">
+    <meta content="template" property="og:url">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <!-- css -->
+    <link rel="stylesheet" crossorigin="" href="../css/default.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0"
+        rel="stylesheet" />
+    <!-- jq -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            function bindPcNavHover() {
+                const isPc = $(window).width() >= 720;
+
+                if (isPc) {
+                    $('.nav_1depth')
+                        .off('.pcNav')
+                        .on('mouseenter.pcNav', function () {
+                            $(this).children('.nav_2depth').stop(true, true).slideDown(200);
+                        })
+                        .on('mouseleave.pcNav', function () {
+                            $(this).children('.nav_2depth').stop(true, true).slideUp(200);
+                        });
+                } else {
+                    $('.nav_1depth').off('.pcNav');
+                    $('.nav_2depth').removeAttr('style');
+                }
+            }
+
+            bindPcNavHover();
+            $(window).on('resize', bindPcNavHover);
+
+            $('body').removeClass('no-scroll');
+            $('.nav_open').click(function () {
+                $(this).toggleClass('active');
+                $('nav > ul').toggleClass('open');
+
+                if ($(this).hasClass('active')) {
+                    $('body').addClass('no-scroll');
+                } else {
+                    $('body').removeClass('no-scroll');
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="admin">
+            <div class="cont">
+                <div class="lnb">
+
+                    <h1 class="logo">플랫폼로고</h1>
+                    <div class="logout">
+                        <p>관리자(admin)</p>
+                        <button class="btn_under">로그아웃</button>
+                    </div>
+                    <ul>
+                        <li class="lnb_1depth"><a href="">홈</a></li>
+                        <li class="lnb_1depth "><a href="/admin/user/list.html">사용자 관리</a></li>
+                        <li class="lnb_1depth active"><a href="/admin/agency/list.html">대리점 관리</a></li>
+                        <li class="lnb_1depth "><a href="/admin/worker/list.html">작업자 관리</a></li>
+                        <li class="lnb_1depth "><a href="/admin/client/list.html">고객사 관리</a></li>
+                        <li class="lnb_1depth "><a href="/admin/ca_status/list.html">고객사-대리점 현황</a></li>
+                        <li class="lnb_1depth "><a href="/admin/distribution/list.html">영업권 신청현황</a></li>
+                        <li class="lnb_1depth "><a href="/admin/contract/list.html">계약 관리</a></li>
+                        <li class="lnb_1depth "><a href="/admin/territory/list.html">영업권역 관리</a></li>
+                        <li class="lnb_1depth "><a href="/admin/equip/list.html">장비 관리</a></li>
+                        <li class="lnb_1depth "><a href="/admin/rent/list.html">장비 임대 현황</a></li>
+                        <li class="lnb_1depth "><a href="/admin/board/list.html">게시판 관리</a></li>
+                        <li class="lnb_1depth"><a href="/admin/inquiry/list.html">1:1 문의 관리</a></li>
+                    </ul>
+                </div>
+
+                <div class="content">
+                    <h3 class="adm_title">대리점 관리</h3>
+
+                    <div class="search">
+                        <div class="search_input">
+                            <h5>구분</h5>
+                            <select name="" id="">
+                                <option value="">전체</option>
+                                <option value="">기관</option>
+                                <option value="">개인</option>
+                            </select>
+                        </div>
+                        <div class="search_input">
+                            <h5>승인여부</h5>
+                            <select name="" id="">
+                                <option value="">전체</option>
+                                <option value="">승인대기</option>
+                                <option value="">승인</option>
+                                <option value="">반려</option>
+                            </select>
+                        </div>
+                        <div class="search_input">
+                            <h5>영업권역</h5>
+                            <select name="" id="">
+                                <option value="">전체</option>
+                                <option value="">서울</option>
+                                <option value="">경기</option>
+                                <option value="">인천</option>
+                            </select>
+                            <select name="" id="">
+                                <option value="">전체</option>
+                                <option value="">강남구</option>
+                                <option value="">영등포구</option>
+                                <option value="">마포구</option>
+                            </select>
+                        </div>
+                        <div class="search_input">
+                            <h5>신청일</h5>
+                            <div class="flex">
+                                <input type="date">
+                            </div>
+                            <span>~</span>
+                            <div class="flex">
+                                <input type="date">
+                            </div>
+                        </div>
+                        <div class="search_input">
+                            <h5>조회조건</h5>
+                            <select name="" id="">
+                                <option value="">아이디</option>
+                                <option value="">대리점명</option>
+                                <option value="">사업자번호</option>
+                                <option value="">대표자명</option>
+                                <option value="">담당자</option>
+                            </select>
+                            <div class="flex">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <button class="btn_md">조회</button>
+                    </div>
+
+
+                    <div class="conarea">
+                        <div class="top_btn">
+                            <p class="caption">대리점 리스트 (총 75건)</p>
+                            <div class="btn_wrap">
+                                <a href="write_org.html" class="btn_sm">기관 신규등록</a>
+                                <a href="write_indi.html" class="btn_sm">개인 신규등록</a>
+                            </div>
+                        </div>
+                        <div class="table_wrap">
+                            <table class="table_b tb_list">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>구분</th>
+                                        <th>아이디</th>
+                                        <th>대리점명</th>
+                                        <th>사업자번호</th>
+                                        <th>대표자명</th>
+                                        <th>영업권역</th>
+                                        <th>담당자</th>
+                                        <th>담당자연락처</th>
+                                        <th>승인여부</th>
+                                        <th>신청일</th>
+                                        <th>승인일</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>기관</td>
+                                        <td>CP0001</td>
+                                        <td>
+                                            <a href="pending_org.html" class="btn_under">삼성전자</a>
+                                        </td>
+                                        <td>111-22-33333</td>
+                                        <td>이채용</td>
+                                        <td>-</td>
+                                        <td>김길수</td>
+                                        <td>010-1234-5678</td>
+                                        <td>승인대기</td>
+                                        <td>2025.02.02</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>개인</td>
+                                        <td>CP0002</td>
+                                        <td>
+                                            <a href="approve_indi.html" class="btn_under">-</a>
+                                        </td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>서울 &gt; 영등포구</td>
+                                        <td>이민시</td>
+                                        <td>010-9876-5432</td>
+                                        <td>승인</td>
+                                        <td>2025.01.23</td>
+                                        <td>2025.01.31</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>개인</td>
+                                        <td>CP0003</td>
+                                        <td>
+                                            <a href="reject_indi.html" class="btn_under">SK</a>
+                                        </td>
+                                        <td>513-79-21517</td>
+                                        <td>최태원</td>
+                                        <td>서울 &gt; 마포구</td>
+                                        <td>박진호</td>
+                                        <td>010-1579-2468</td>
+                                        <td>반려</td>
+                                        <td>2025.01.23</td>
+                                        <td>2025.01.23</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                   <div class="pagenation">
+                        <ul>
+                            <li class="arrow"><a href="?page=1">« 처음</a></li>
+                            <li class="arrow"><a href="?page=prev">‹ 이전</a></li>
+                            <li><a href="?page=1" class="active">1</a></li>
+                            <li><a href="?page=2">2</a></li>
+                            <li><a href="?page=3">3</a></li>
+                            <li><a href="?page=4">4</a></li>
+                            <li><a href="?page=5">5</a></li>
+                            <li><a href="?page=6">6</a></li>
+                            <li><a href="?page=7">7</a></li>
+                            <li class="arrow"><a href="?page=next">다음 ›</a></li>
+                            <li class="arrow"><a href="?page=10">마지막 »</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
