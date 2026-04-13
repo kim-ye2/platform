@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <link href="/favicon.ico" rel="icon">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>Platform - Admin</title>
+    <title>Platform - Partner</title>
     <meta content="" name="keywords" />
     <meta content="website" property="og:type">
     <meta content="template" property="og:url">
@@ -72,18 +72,19 @@
                     </div>
                     <ul>
                         <li class="lnb_1depth"><a href="">홈</a></li>
-                        <li class="lnb_1depth "><a href="/admin/user/list.html">사용자 관리</a></li>
-                        <li class="lnb_1depth"><a href="/admin/agency/list.html">대리점 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/worker/list.html">작업자 관리</a></li>
-                        <li class="lnb_1depth active"><a href="/admin/client/list.html">고객사 관리</a></li>
-                        <li class="lnb_1depth"><a href="/admin/ca_status/list.html">고객사-대리점 현황</a></li>
-                        <li class="lnb_1depth "><a href="/admin/distribution/list.html">영업권 신청현황</a></li>
-                        <li class="lnb_1depth "><a href="/admin/contract/list.html">계약 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/territory/list.html">영업권역 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/equip/list.html">장비 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/rent/list.html">장비 임대 현황</a></li>
-                        <li class="lnb_1depth"><a href="/admin/board/list.html">게시판 관리</a></li>
-                        <li class="lnb_1depth"><a href="/admin/inquiry/list.html">1:1 문의 관리</a></li>
+                        <li class="lnb_1depth "><a href="/partner/agency/modify_org.html">대리점 정보 관리</a></li>
+                        <li class="lnb_1depth "><a href="/partner/worker/list.html">작업자 관리</a></li>
+                        <li class="lnb_1depth active"><a href="/partner/client/list.html">고객사 관리</a></li>
+                        <li class="lnb_1depth "><a href="/partner/territory/list.html">영업권 관리</a></li>
+                        <li class="lnb_1depth "><a href="/partner/distribution/list.html">영업권 신청현황</a></li>
+                        <li class="lnb_1depth "><a href="">계약 관리</a></li>
+                        <li class="lnb_1depth "><a href="">작업스케줄 관리</a></li>
+                        <li class="lnb_1depth "><a href="">작업자 배정</a></li>
+                        <li class="lnb_1depth "><a href="">장비 임대 현황</a></li>
+                        <li class="lnb_1depth "><a href="">공지사항</a></li>
+                        <li class="lnb_1depth "><a href="">자료실</a></li>
+                        <li class="lnb_1depth "><a href="">1:1 문의</a></li>
+                        <li class="lnb_1depth "><a href="">정산 관리</a></li>
                     </ul>
                 </div>
 
@@ -94,11 +95,9 @@
                         <div class="search_input">
                             <h5>조회조건</h5>
                             <select name="" id="">
-                                <option value="">아이디</option>
-                                <option value="">작업자명</option>
-                                <option value="">핸드폰번호</option>
-                                <option value="">성별</option>
-                                <option value="">경력</option>
+                                <option value="">고객사명</option>
+                                <option value="">사업자번호</option>
+                                <option value="">대표자명</option>
                             </select>
                             <div class="flex">
                                 <input type="text">
@@ -141,7 +140,7 @@
                                         <th colspan="4">고객사</th>
                                         <th rowspan="2">계약여부(現)</th>
                                         <th rowspan="2">계약기간</th>
-                                        <th colspan="4">계약 대리점</th>
+                                        <th colspan="2">계약 대리점</th>
                                         <th rowspan="2">등록일</th>
                                         <th rowspan="2">등록자</th>
                                         <th rowspan="2">권역 등록여부</th>
@@ -152,9 +151,7 @@
                                         <th>사업자번호</th>
                                         <th>대표자명</th>
                                         <th>구분</th>
-                                        <th>대리점명</th>
-                                        <th>담당자</th>
-                                        <th class="br">담당자연락처</th>
+                                        <th class="br">대리점명</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -165,8 +162,6 @@
                                         <td>111-22-33333</td>
                                         <td>이효리</td>
                                         <td>N</td>
-                                        <td>-</td>
-                                        <td>-</td>
                                         <td>-</td>
                                         <td>-</td>
                                         <td>-</td>
@@ -184,8 +179,6 @@
                                         <td>2025.02.01 ~ 2025.12.31</td>
                                         <td>기관</td>
                                         <td>삼성전자</td>
-                                        <td>김길수</td>
-                                        <td>010-1234-5678</td>
                                         <td>2025.01.23</td>
                                         <td>장동건(삼성전자)</td>
                                         <td>등록</td>
@@ -200,8 +193,6 @@
                                         <td>2025.02.01 ~ 2025.12.31</td>
                                         <td>개인</td>
                                         <td>개인대리점</td>
-                                        <td>박선미</td>
-                                        <td>010-1111-1111</td>
                                         <td>2025.01.23</td>
                                         <td>박선미(개인대리점)</td>
                                         <td>등록</td>

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <link href="/favicon.ico" rel="icon">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>Platform - Admin</title>
+    <title>Platform - Partner</title>
     <meta content="" name="keywords" />
     <meta content="website" property="og:type">
     <meta content="template" property="og:url">
@@ -56,18 +56,6 @@
                     $('body').removeClass('no-scroll');
                 }
             });
-
-            /* 대분류 행 클릭 시 체크 표시 */
-            $('#tbl_major tbody tr').click(function () {
-                $('#tbl_major tbody tr').removeClass('selected');
-                $(this).addClass('selected');
-            });
-
-            /* 중분류 행 클릭 시 체크 표시 */
-            $('#tbl_minor tbody tr').click(function () {
-                $('#tbl_minor tbody tr').removeClass('selected');
-                $(this).addClass('selected');
-            });
         });
     </script>
 </head>
@@ -77,216 +65,180 @@
         <div class="admin">
             <div class="cont">
                 <div class="lnb">
-
-                    <h1 class="logo">플랫폼로고</h1>
+                     <h1 class="logo">플랫폼로고</h1>
                     <div class="logout">
                         <p>관리자(admin)</p>
                         <button class="btn_under">로그아웃</button>
                     </div>
                     <ul>
                         <li class="lnb_1depth"><a href="">홈</a></li>
-                        <li class="lnb_1depth "><a href="/admin/user/list.html">사용자 관리</a></li>
-                        <li class="lnb_1depth"><a href="/admin/agency/list.html">대리점 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/worker/list.html">작업자 관리</a></li>
-                        <li class="lnb_1depth"><a href="/admin/client/list.html">고객사 관리</a></li>
-                        <li class="lnb_1depth"><a href="/admin/ca_status/list.html">고객사-대리점 현황</a></li>
-                        <li class="lnb_1depth"><a href="/admin/distribution/list.html">영업권 신청현황</a></li>
-                        <li class="lnb_1depth"><a href="/admin/contract/list.html">계약 관리</a></li>
-                        <li class="lnb_1depth active"><a href="/admin/territory/list.html">영업권역 관리</a></li>
-                        <li class="lnb_1depth"><a href="/admin/equip/list.html">장비 관리</a></li>
-                        <li class="lnb_1depth"><a href="/admin/equip_rent/list.html">장비 임대 현황</a></li>
-                        <li class="lnb_1depth"><a href="/admin/board/list.html">게시판 관리</a></li>
-                        <li class="lnb_1depth"><a href="/admin/inquiry/list.html">1:1 문의 관리</a></li>
+                        <li class="lnb_1depth "><a href="/partner/agency/modify_org.html">대리점 정보 관리</a></li>
+                        <li class="lnb_1depth "><a href="/partner/worker/list.html">작업자 관리</a></li>
+                        <li class="lnb_1depth "><a href="/partner/client/list.html">고객사 관리</a></li>
+                        <li class="lnb_1depth active"><a href="/partner/territory/list.html">영업권 관리</a></li>
+                        <li class="lnb_1depth "><a href="/partner/distribution/list.html">영업권 신청현황</a></li>
+                        <li class="lnb_1depth "><a href="/partner/contract/list.html">계약 관리</a></li>
+                        <li class="lnb_1depth "><a href="">작업스케줄 관리</a></li>
+                        <li class="lnb_1depth "><a href="">작업자 배정</a></li>
+                        <li class="lnb_1depth "><a href="">장비 임대 현황</a></li>
+                        <li class="lnb_1depth "><a href="">공지사항</a></li>
+                        <li class="lnb_1depth "><a href="">자료실</a></li>
+                        <li class="lnb_1depth "><a href="">1:1 문의</a></li>
+                        <li class="lnb_1depth "><a href="">정산 관리</a></li>
                     </ul>
                 </div>
 
                 <div class="content">
-                    <h3 class="adm_title">영업권역 관리</h3>
+                    <h3 class="adm_title">영업권 현황</h3>
 
-                    <!-- 검색 영역 -->
                     <div class="search">
                         <div class="search_input">
-                            <h5>분류</h5>
+                            <h5>조회조건</h5>
                             <select name="" id="">
-                                <option value="">– 선택 –</option>
-                                <option value="">대분류</option>
-                                <option value="">중분류</option>
+                                <option value="">고객사명</option>
+                                <option value="">대리점명</option>
+                                <option value="">대표자명</option>
                             </select>
                             <input type="text">
                         </div>
+
                         <div class="search_input">
-                            <h5>사용여부</h5>
+                            <h5>진행상태</h5>
                             <select name="" id="">
-                                <option value="">– 전체 –</option>
+                                <option value="">전체</option>
+                                <option value="">계약체결</option>
+                                <option value="">견적서 작성</option>
+                            </select>
+                        </div>
+
+                        <div class="search_input">
+                            <h5>영업권 이관여부</h5>
+                            <select name="" id="">
+                                <option value="">전체</option>
                                 <option value="">Y</option>
                                 <option value="">N</option>
                             </select>
                         </div>
+
                         <button class="btn_md">조회</button>
                     </div>
 
-                    <!-- 저장 버튼 -->
-                    <div class="section_top_btn">
-                        <button  class="btn_md">저장</button>
+                    <div class="conarea">
+                        <div class="top_btn">
+                            <p class="caption">영업권 리스트 (총 75건)</p>
+                        </div>
+                        <div class="table_wrap">
+                            <table class="table_b tb_list">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2">No</th>
+                                        <th rowspan="2">권역</th>
+                                        <th rowspan="2">영업권<br>이관여부</th>
+                                        <th colspan="4">고객사 정보</th>
+                                        <th colspan="4">계약 정보</th>
+                                        <th rowspan="2">신청일</th>
+                                        <th rowspan="2">처리일</th>
+                                        <th rowspan="2">진행상태</th>
+                                    </tr>
+                                    <tr>
+                                        <th>고객사코드</th>
+                                        <th>고객사명</th>
+                                        <th>사업자번호</th>
+                                        <th>대표자명</th>
+                                        <th>계약코드</th>
+                                        <th>계약명</th>
+                                        <th>계약기간</th>
+                                        <th class="br">수수료</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>서울 &gt; 마포구</td>
+                                        <td>Y</td>
+                                        <td></td>
+                                        <td>테슬라</td>
+                                        <td>111-22-33333</td>
+                                        <td>일론머스크</td>
+                                        <td>US0001</td>
+                                        <td>테슬라 '26년 신규계약</td>
+                                        <td>2026.03.01 ~ 2027.02.28</td>
+                                        <td>11%</td>
+                                        <td>2026.02.25</td>
+                                        <td>2026.03.01</td>
+                                        <td>계약체결</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>서울 &gt; 은평구</td>
+                                        <td>N</td>
+                                        <td></td>
+                                        <td>애플</td>
+                                        <td>123-45-67890</td>
+                                        <td>홍길동</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>2026.02.25</td>
+                                        <td>-</td>
+                                        <td>견적서 작성</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>서울 &gt; 은평구</td>
+                                        <td>N</td>
+                                        <td></td>
+                                        <td>MS</td>
+                                        <td>135-79-24680</td>
+                                        <td>홍길동</td>
+                                        <td>US0003</td>
+                                        <td>MS 유지보수 계약</td>
+                                        <td>2026.03.01 ~ 2027.02.28</td>
+                                        <td>15%</td>
+                                        <td>2026.02.25</td>
+                                        <td>2026.02.28</td>
+                                        <td>계약체결</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>서울 &gt; 은평구</td>
+                                        <td>Y</td>
+                                        <td></td>
+                                        <td>나이키</td>
+                                        <td>516-25-71257</td>
+                                        <td>데이빗</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
-                    <!-- 대분류 + 중분류 나란히 -->
-                    <div class="conarea_flex">
+                    <div class="pagenation">
+                        <ul>
+                            <li class="arrow"><a href="?page=1">« 처음</a></li>
+                            <li class="arrow"><a href="?page=prev">‹ 이전</a></li>
+                            <li><a href="?page=1" class="active">1</a></li>
+                            <li><a href="?page=2">2</a></li>
+                            <li><a href="?page=3">3</a></li>
+                            <li><a href="?page=4">4</a></li>
+                            <li><a href="?page=5">5</a></li>
+                            <li class="arrow"><a href="?page=next">다음 ›</a></li>
+                            <li class="arrow"><a href="?page=last">마지막 »</a></li>
+                        </ul>
+                    </div>
 
-                        <!-- 대분류 -->
-                        <div class="conarea w50">
-                            <div class="top_btn">
-                                <p class="caption">대분류 (총 12건)</p>
-                                <div class="btn_wrap">
-                                    <a href="" class="btn_sm">행추가</a>
-                                    <a href="" class="btn_sm">행삭제</a>
-                                </div>
-                            </div>
-                            <div class="table_wrap scroll-y">
-                                <table class="table_b tb_list">
-                                    <thead>
-                                        <tr>
-                                            <th></th>
-                                            <th>No</th>
-                                            <th>대분류코드</th>
-                                            <th>대분류명</th>
-                                            <th>사용여부</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="selected">
-                                            <td><input type="checkbox"></td>
-                                            <td>1</td>
-                                            <td>A01</td>
-                                            <td><input type="text" class="wfull" value="서울"></td>
-                                            <td>
-                                                <select name="" id="">
-                                                    <option value="Y" selected>Y</option>
-                                                    <option value="N">N</option>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox"></td>
-                                            <td>2</td>
-                                            <td>B02</td>
-                                            <td><input type="text" class="wfull" value="경기"></td>
-                                            <td>
-                                                <select name="" id="">
-                                                    <option value="Y" selected>Y</option>
-                                                    <option value="N">N</option>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox"></td>
-                                            <td>3</td>
-                                            <td>C03</td>
-                                            <td><input type="text" class="wfull" value="인천"></td>
-                                            <td>
-                                                <select name="" id="">
-                                                    <option value="Y" selected>Y</option>
-                                                    <option value="N">N</option>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                        <!-- 중분류 -->
-                        <div class="conarea w50">
-                            <div class="top_btn">
-                                <p class="caption">중분류 (총 12건)</p>
-                                <div class="btn_wrap">
-                                    <a href="" class="btn_sm">행추가</a>
-                                    <a href="" class="btn_sm">행삭제</a>
-                                </div>
-                            </div>
-                            <div class="table_wrap scroll-y">
-                                <table class="table_b tb_list">
-                                    <thead>
-                                        <tr>
-                                            <th></th>
-                                            <th>No</th>
-                                            <th>중분류코드</th>
-                                            <th>중분류명</th>
-                                            <th>사용여부</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="selected">
-                                            <td><input type="checkbox"></td>
-                                            <td>1</td>
-                                            <td>A0101</td>
-                                            <td><input type="text" class="wfull" value="강북"></td>
-                                            <td>
-                                                <select name="" id="">
-                                                    <option value="Y" selected>Y</option>
-                                                    <option value="N">N</option>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox"></td>
-                                            <td>2</td>
-                                            <td>A0102</td>
-                                            <td><input type="text" class="wfull" value="강서"></td>
-                                            <td>
-                                                <select name="" id="">
-                                                    <option value="Y" selected>Y</option>
-                                                    <option value="N">N</option>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox"></td>
-                                            <td>3</td>
-                                            <td>A0103</td>
-                                            <td><input type="text" class="wfull" value="강동"></td>
-                                            <td>
-                                                <select name="" id="">
-                                                    <option value="Y" selected>Y</option>
-                                                    <option value="N">N</option>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox"></td>
-                                            <td>4</td>
-                                            <td>A0104</td>
-                                            <td><input type="text" class="wfull" value="강남"></td>
-                                            <td>
-                                                <select name="" id="">
-                                                    <option value="Y" selected>Y</option>
-                                                    <option value="N">N</option>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox"></td>
-                                            <td>5</td>
-                                            <td>A0105</td>
-                                            <td><input type="text" class="wfull" value="강북/강동"></td>
-                                            <td>
-                                                <select name="" id="">
-                                                    <option value="Y">Y</option>
-                                                    <option value="N" selected>N</option>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                    </div><!-- /conarea_flex -->
-
-                </div><!-- /content -->
-            </div><!-- /cont -->
-        </div><!-- /admin -->
-    </div><!-- /wrap -->
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

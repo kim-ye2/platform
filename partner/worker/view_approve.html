@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <link href="/favicon.ico" rel="icon">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>Platform - Admin</title>
+    <title>Platform - Partner</title>
     <meta content="" name="keywords" />
     <meta content="website" property="og:type">
     <meta content="template" property="og:url">
@@ -65,7 +65,6 @@
         <div class="admin">
             <div class="cont">
                 <div class="lnb">
-
                     <h1 class="logo">플랫폼로고</h1>
                     <div class="logout">
                         <p>관리자(admin)</p>
@@ -73,28 +72,28 @@
                     </div>
                     <ul>
                         <li class="lnb_1depth"><a href="">홈</a></li>
-                        <li class="lnb_1depth "><a href="/admin/user/list.html">사용자 관리</a></li>
-                        <li class="lnb_1depth active"><a href="/admin/agency/list.html">대리점 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/worker/list.html">작업자 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/client/list.html">고객사 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/ca_status/list.html">고객사-대리점 현황</a></li>
-                        <li class="lnb_1depth "><a href="/admin/distribution/list.html">영업권 신청현황</a></li>
-                        <li class="lnb_1depth "><a href="/admin/contract/list.html">계약 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/territory/list.html">영업권역 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/equip/list.html">장비 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/rent/list.html">장비 임대 현황</a></li>
-                        <li class="lnb_1depth "><a href="/admin/board/list.html">게시판 관리</a></li>
-                        <li class="lnb_1depth"><a href="/admin/inquiry/list.html">1:1 문의 관리</a></li>
+                        <li class="lnb_1depth "><a href="/partner/agency/modify_org.html">대리점 정보 관리</a></li>
+                        <li class="lnb_1depth active"><a href="/partner/worker/list.html">작업자 관리</a></li>
+                        <li class="lnb_1depth "><a href="/partner/client/list.html">고객사 관리</a></li>
+                        <li class="lnb_1depth "><a href="/partner/territory/list.html">영업권 관리</a></li>
+                        <li class="lnb_1depth "><a href="/partner/distribution/list.html">영업권 신청현황</a></li>
+                        <li class="lnb_1depth "><a href="">계약 관리</a></li>
+                        <li class="lnb_1depth "><a href="">작업스케줄 관리</a></li>
+                        <li class="lnb_1depth "><a href="">작업자 배정</a></li>
+                        <li class="lnb_1depth "><a href="">장비 임대 현황</a></li>
+                        <li class="lnb_1depth "><a href="">공지사항</a></li>
+                        <li class="lnb_1depth "><a href="">자료실</a></li>
+                        <li class="lnb_1depth "><a href="">1:1 문의</a></li>
+                        <li class="lnb_1depth "><a href="">정산 관리</a></li>
                     </ul>
                 </div>
 
                 <div class="content">
-                    <h3 class="adm_title">대리점 관리</h3>
+                    <h3 class="adm_title">작업자 관리</h3>
 
                     <div class="conarea">
                         <div class="table_wrap">
 
-                            <!-- 1구역 : 대리점명 / 구분 / 승인여부 / 신청일 -->
                             <table class="table_a">
                                 <colgroup>
                                     <col width="15%">
@@ -104,24 +103,10 @@
                                 </colgroup>
                                 <tbody>
                                     <tr>
-                                        <th>대리점명</th>
-                                        <td><input type="text" class="wfull" value="개인대리점"></td>
-                                        <th>구분</th>
-                                        <td>
-                                            <select name="" id="" disabled>
-                                                <option value="">전체</option>
-                                                <option value="" >기관</option>
-                                                <option value="" selected>개인</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                    <tr>
                                         <th>승인여부</th>
-                                        <td>
-                                            <span class="pend">승인대기</span>
-                                        </td>
+                                        <td><span class="appro">승인</span> (2026.02.05)</td>
                                         <th>신청일</th>
-                                        <td>2026.02.20</td>
+                                        <td>2026.02.02</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -139,17 +124,16 @@
                                         <th>아이디</th>
                                         <td>
                                             <div class="flex">
-                                                <input type="text"class="wfull" value="test00700" disabled>
-                                                <!-- <button type="button" class="btn_sm">중복체크</button> -->
+                                                <input type="text" value="test00700" disabled >
                                             </div>
                                         </td>
                                         <th>비밀번호</th>
                                         <td><button type="button" class="btn_sm">초기화</button></td>
                                     </tr>
                                     <tr>
-                                        <th>담당자명</th>
-                                        <td><input type="text" class="wfull" value="임꺽정"></td>
-                                        <th>담당자 연락처</th>
+                                        <th>작업자명</th>
+                                        <td><input type="text" value="임꺽정"></td>
+                                        <th>작업자 연락처</th>
                                         <td><input type="text" value="010-1234-5678"></td>
                                     </tr>
                                     <tr>
@@ -167,7 +151,15 @@
                                             </div>
                                         </td>
                                         <th>경력</th>
-                                        <td><input type="text" value="13년"></td>
+                                        <td>
+                                            <select name="" id="">
+                                                <option value="" selected>선택</option>
+                                                <option value="" >1</option>
+                                                <option value="" selected>2</option>
+                                                <option value="" >3</option>
+                                                <option value="" >4</option>
+                                            </select>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -176,63 +168,57 @@
                             <table class="table_a">
                                 <colgroup>
                                     <col width="15%">
-                                    <col width="85%">
+                                    <col width="35%">
+                                    <col width="15%">
+                                    <col width="35%">
                                 </colgroup>
                                 <tbody>
                                     <tr>
-                                        <th>영업권역</th>
+                                        <th>소속 대리점</th>
                                         <td>
                                             <div class="flex">
-                                                <select name="" id="">
-                                                    <option value="">- 선택 -</option>
-                                                    <option value="">서울</option>
-                                                    <option value="">경기</option>
-                                                    <option value="">인천</option>
-                                                </select>
-                                                <select name="" id="">
-                                                    <option value="">- 선택 -</option>
-                                                    <option value="">강남구</option>
-                                                    <option value="">영등포구</option>
-                                                    <option value="">마포구</option>
-                                                </select>
+                                                <p  class="scope">
+                                                    <input type="text" value="CP001" disabled>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 12 12" fill="none">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.91999 1.0125C3.87299 1.1085 2.97349 1.525 2.24949 2.2495C1.59649 2.9025 1.19549 3.693 1.04649 4.6225C1.00049 4.9085 1.00049 5.5915 1.04649 5.8775C1.19549 6.807 1.59649 7.5975 2.24949 8.2505C2.89999 8.9015 3.69599 9.305 4.62249 9.4535C4.90849 9.4995 5.59149 9.4995 5.87749 9.4535C6.55935 9.34607 7.20632 9.07954 7.76599 8.6755L7.88149 8.59301L8.83599 9.5435C9.69299 10.398 9.79999 10.498 9.88849 10.527C10.2945 10.662 10.6615 10.302 10.53 9.8975C10.497 9.7965 10.4355 9.73051 9.54399 8.83601L8.59299 7.8815L8.67549 7.766C9.07953 7.20633 9.34606 6.55937 9.45349 5.8775C9.49949 5.5915 9.49949 4.9085 9.45349 4.6225C9.30499 3.696 8.90149 2.9 8.25049 2.2495C7.61261 1.60546 6.78384 1.18458 5.88749 1.0495C5.69199 1.0195 5.09399 0.996505 4.91999 1.0125ZM5.80049 2.0475C7.16799 2.296 8.19899 3.3295 8.45499 4.71C8.50099 4.9575 8.50099 5.5425 8.45499 5.79C8.19799 7.1755 7.17549 8.198 5.78999 8.455C5.54249 8.501 4.95749 8.501 4.70999 8.455C3.45799 8.2225 2.47599 7.345 2.13049 6.1505C1.96653 5.582 1.96125 4.97947 2.11523 4.40818C2.2692 3.83689 2.57655 3.31862 3.00399 2.9095C3.49969 2.43121 4.13459 2.12286 4.81699 2.029C5.05599 1.995 5.56199 2.0045 5.80049 2.0475Z" fill="#CCCCCC"/>
+                                                        </svg>                                    
+                                                </p>
+                                                <input type="text" value="허그맘" disabled>
                                             </div>
+                                        </td>
+                                        <th>사용여부</th>
+                                        <td>
+                                            <select name="" id="">
+                                                <option value="">- 선택 -</option>
+                                                <option value="" selected>사용</option>
+                                                <option value="">미사용</option>
+                                            </select>
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>정산계좌</th>
-                                        <td>
+                                        <td colspan="3">
                                             <div class="flex">
                                                 <select name="" id="">
                                                     <option value="">- 선택 -</option>
                                                     <option value="">국민은행</option>
                                                     <option value="">신한은행</option>
-                                                    <option value="">우리은행</option>
+                                                    <option value="" selected>우리은행</option>
                                                     <option value="">하나은행</option>
                                                 </select>
-                                                <input type="text" placeholder="계좌번호(-제외)">
-                                                <input type="text" placeholder="예금주명">
+                                                <input type="text" placeholder="계좌번호(-제외)" value="1002-722-12345">
+                                                <input type="text" placeholder="예금주명" value="홍길동">
                                             </div>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
 
-                        <div class="flex-end">
-                            <a href="" class="btn_sm">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none">
-                                <mask id="mask0_62_882" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-                                    <rect width="24" height="24" fill="#D9D9D9"/>
-                                </mask>
-                                <g mask="url(#mask0_62_882)">
-                                    <path d="M16 21C15.45 21 14.9792 20.8042 14.5875 20.4125C14.1958 20.0208 14 19.55 14 19V15C14 14.45 14.1958 13.9792 14.5875 13.5875C14.9792 13.1958 15.45 13 16 13H20C20.55 13 21.0208 13.1958 21.4125 13.5875C21.8042 13.9792 22 14.45 22 15V19C22 19.55 21.8042 20.0208 21.4125 20.4125C21.0208 20.8042 20.55 21 20 21H16ZM16 19H20V15H16V19ZM2 18V16H11V18H2ZM16 11C15.45 11 14.9792 10.8042 14.5875 10.4125C14.1958 10.0208 14 9.55 14 9V5C14 4.45 14.1958 3.97917 14.5875 3.5875C14.9792 3.19583 15.45 3 16 3H20C20.55 3 21.0208 3.19583 21.4125 3.5875C21.8042 3.97917 22 4.45 22 5V9C22 9.55 21.8042 10.0208 21.4125 10.4125C21.0208 10.8042 20.55 11 20 11H16ZM16 9H20V5H16V9ZM2 8V6H11V8H2Z" fill="#A3A3A3"/>
-                                </g>
-                                </svg> 목록으로
-                            </a>
-                        </div>
-                        <div class="modal_btn_wrap">
-                            <button type="button" class="btn_md gray">반려</button>
-                            <button type="button" class="btn_md btn_primary">승인</button>
+                            <div class="modal_btn_wrap">
+                                <button type="button" class="btn_md gray">취소</button>
+                                <button type="button" class="btn_md btn_primary">저장</button>
+                            </div>
+
                         </div>
                     </div>
                 </div>
