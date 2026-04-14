@@ -10,8 +10,8 @@
     <meta content="website" property="og:type">
     <meta content="template" property="og:url">
     <meta content="yes" name="apple-mobile-web-app-capable">
-    <link rel="stylesheet" crossorigin="" href="../css/default.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" crossorigin="" href="../../css/default.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" as="style" crossorigin
@@ -67,43 +67,34 @@
                         <li class="lnb_1depth "><a href="/partner/workerTask/list.html">작업자 배정</a></li>
                         <li class="lnb_1depth "><a href="/partner/rent/list.html">장비 임대 현황</a></li>
                         <li class="lnb_1depth "><a href="/partner/board/notice/list.html">공지사항</a></li>
-                        <li class="lnb_1depth "><a href="/partner/board/data/list.html">자료실</a></li>
-                        <li class="lnb_1depth active"><a href="/partner/inquiry/list.html">1:1 문의</a></li>
+                        <li class="lnb_1depth active"><a href="/partner/board/data/list.html">자료실</a></li>
+                        <li class="lnb_1depth "><a href="/partner/inquiry/list.html">1:1 문의</a></li>
                         <li class="lnb_1depth "><a href="">정산 관리</a></li>
                     </ul>
                 </div>
 
                 <div class="content">
-                    <h3 class="adm_title">1:1 문의</h3>
+                    <h3 class="adm_title">자료실</h3>
 
                     <div class="search">
                         <div class="search_input">
-                            <h5>문의유형</h5>
+                            <h5>중요여부</h5>
                             <select name="" id="">
                                 <option value="">전체</option>
-                                <option value="">장비 관련</option>
-                                <option value="">계약 관련</option>
-                                <option value="">영업권 관련</option>
-                            </select>
-                        </div>
-                        <div class="search_input">
-                            <h5>답변여부</h5>
-                            <select name="" id="">
-                                <option value="">전체</option>
-                                <option value="">답변대기</option>
-                                <option value="">답변완료</option>
+                                <option value="">중요</option>
+                                <option value="">일반</option>
                             </select>
                         </div>
                         <div class="search_input">
                             <h5>제목</h5>
-                            <input type="text" name="" id="">
+                            <input type="text">
                         </div>
                         <div class="search_input">
                             <h5>등록일</h5>
                             <div class="flex">
-                                <input type="date">
+                                <input type="date" >
                                 ~
-                                <input type="date">
+                                <input type="date" >
                             </div>
                         </div>
                         <button class="btn_md">조회</button>
@@ -111,65 +102,33 @@
 
                     <div class="conarea">
                         <div class="top_btn">
-                            <p class="caption">문의 리스트 (총 75건)</p>
-                            <div class="btn_wrap">
-                                <a href="write.html" class="btn_sm">신규등록</a>
-                            </div>
+                            <p class="caption">자료실 리스트 (총 75건)</p>
                         </div>
                         <div class="table_wrap">
                             <table class="table_b tb_list">
-                                <colgroup>
-                                    <col width="55px">
-                                    <col width="110px">
-                                    <col width="*">
-                                    <col width="110px">
-                                    <col width="90px">
-                                    <col width="110px">
-                                    <col width="90px">
-                                    <col width="110px">
-                                </colgroup>
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>문의유형</th>
+                                        <th>중요여부</th>
                                         <th>제목</th>
-                                        <th>대리점</th>
-                                        <th>등록자</th>
                                         <th>등록일</th>
-                                        <th>답변자</th>
-                                        <th>답변일</th>
+                                        <th>조회수</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td>장비 관련</td>
-                                        <td><a href="view.html" class="btn_under">장비관련하여 언제 답변을 받나요?</a></td>
-                                        <td>삼성전자</td>
-                                        <td>김담당</td>
+                                        <td>중요</td>
+                                        <td><a href="view.html" class="btn_under">자료실 등록된 게시글 제목입니다.</a></td>
                                         <td>2026.03.28</td>
-                                        <td>-</td>
-                                        <td>-</td>
+                                        <td>76</td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
-                                        <td>계약 관련</td>
-                                        <td><a href="view_answer.html" class="btn_under">계약관련 질문이 있습니다.</a></td>
-                                        <td>테슬라</td>
-                                        <td>이진지</td>
-                                        <td>2026.03.01</td>
-                                        <td>관리자</td>
-                                        <td>2026.03.25</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>영업권 관련</td>
-                                        <td><a href="view.html" class="btn_under">영업관련 질문입니다.</a></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>일반</td>
+                                        <td><a href="view.html" class="btn_under">자료실 등록된 게시글 제목입니다.</a></td>
+                                        <td>2026.03.28</td>
+                                        <td>76</td>
                                     </tr>
                                 </tbody>
                             </table>

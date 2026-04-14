@@ -104,7 +104,7 @@
                                 <tbody>
                                     <tr>
                                         <th>승인여부</th>
-                                        <td><span class="pend">반려</span> (2026.02.05)</td>
+                                        <td></td>
                                         <th>신청일</th>
                                         <td>2026.02.02</td>
                                     </tr>
@@ -124,38 +124,39 @@
                                         <th>아이디</th>
                                         <td>
                                             <div class="flex">
-                                                <input type="text" value="test00700" disabled >
+                                                <input type="text" value="">
+                                                <button class="btn_sm">중복체크</button>
                                             </div>
                                         </td>
                                         <th>비밀번호</th>
-                                        <td></td>
+                                        <td><input type="password" name="" id=""></td>
                                     </tr>
                                     <tr>
                                         <th>작업자명</th>
-                                        <td><input type="text" value="임꺽정" disabled></td>
+                                        <td><input type="text"></td>
                                         <th>작업자 연락처</th>
-                                        <td><input type="text" value="010-1234-5678" disabled></td>
+                                        <td><input type="text"></td>
                                     </tr>
                                     <tr>
                                         <th>성별</th>
                                         <td>
                                             <div class="checkbox">
                                                 <div>
-                                                    <input type="radio" name="gender" id="male" checked="checked" disabled>
+                                                    <input type="radio" name="gender" id="male">
                                                     <label for="male">남자</label>
                                                 </div>
                                                 <div>
-                                                    <input type="radio" name="gender" id="female" disabled>
+                                                    <input type="radio" name="gender" id="female">
                                                     <label for="female">여자</label>
                                                 </div>
                                             </div>
                                         </td>
                                         <th>경력</th>
                                         <td>
-                                            <select name="" id="" disabled>
-                                                <option value="" selected>선택</option>
+                                            <select name="" id="">
+                                                <option value="" selected>- 선택 -</option>
                                                 <option value="" >1</option>
-                                                <option value="" selected>2</option>
+                                                <option value="" >2</option>
                                                 <option value="" >3</option>
                                                 <option value="" >4</option>
                                             </select>
@@ -188,9 +189,9 @@
                                         </td>
                                         <th>사용여부</th>
                                         <td>
-                                            <select name="" id="" disabled>
+                                            <select name="" id="">
                                                 <option value="">- 선택 -</option>
-                                                <option value="" selected>사용</option>
+                                                <option value="" >사용</option>
                                                 <option value="">미사용</option>
                                             </select>
                                         </td>
@@ -199,15 +200,15 @@
                                         <th>정산계좌</th>
                                         <td colspan="3">
                                             <div class="flex">
-                                                <select name="" id="" disabled>
+                                                <select name="" id="">
                                                     <option value="">- 선택 -</option>
                                                     <option value="">국민은행</option>
-                                                    <option value="" >신한은행</option>
+                                                    <option value="">신한은행</option>
                                                     <option value="">우리은행</option>
                                                     <option value="">하나은행</option>
                                                 </select>
-                                                <input type="text" placeholder="계좌번호(-제외)" value="" disabled>
-                                                <input type="text" placeholder="예금주명" value="" disabled>
+                                                <input type="text" placeholder="계좌번호(-제외)" value="">
+                                                <input type="text" placeholder="예금주명" value="">
                                             </div>
                                         </td>
                                     </tr>
@@ -216,6 +217,7 @@
 
                             <div class="modal_btn_wrap">
                                 <button type="button" class="btn_md gray">취소</button>
+                                <button type="button" class="btn_md btn_primary">저장</button>
                             </div>
 
                         </div>

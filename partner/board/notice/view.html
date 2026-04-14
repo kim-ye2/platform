@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <link href="/favicon.ico" rel="icon">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>Platform - Admin</title>
+    <title>Platform - Partner</title>
     <meta content="" name="keywords" />
     <meta content="website" property="og:type">
     <meta content="template" property="og:url">
     <meta content="yes" name="apple-mobile-web-app-capable">
-    <link rel="stylesheet" crossorigin="" href="../css/default.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" crossorigin="" href="../../css/default.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" as="style" crossorigin
@@ -57,24 +57,24 @@
                     </div>
                     <ul>
                         <li class="lnb_1depth"><a href="">홈</a></li>
-                        <li class="lnb_1depth "><a href="/admin/user/list.html">사용자 관리</a></li>
-                        <li class="lnb_1depth"><a href="/admin/agency/list.html">대리점 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/worker/list.html">작업자 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/client/list.html">고객사 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/ca_status/list.html">고객사-대리점 현황</a></li>
-                        <li class="lnb_1depth "><a href="/admin/distribution/list.html">영업권 신청현황</a></li>
-                        <li class="lnb_1depth "><a href="/admin/contract/list.html">계약 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/territory/list.html">영업권역 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/equip/list.html">장비 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/rent/list.html">장비 임대 현황</a></li>
-                        <li class="lnb_1depth active"><a href="/admin/board/list.html">게시판 관리</a></li>
-                        <li class="lnb_1depth"><a href="/admin/inquiry/list.html">1:1 문의 관리</a></li>
+                        <li class="lnb_1depth "><a href="/partner/agency/modify_org.html">대리점 정보 관리</a></li>
+                        <li class="lnb_1depth "><a href="/partner/worker/list.html">작업자 관리</a></li>
+                        <li class="lnb_1depth "><a href="/partner/client/list.html">고객사 관리</a></li>
+                        <li class="lnb_1depth "><a href="/partner/territory/list.html">영업권 관리</a></li>
+                        <li class="lnb_1depth "><a href="/partner/distribution/list.html">영업권 신청현황</a></li>
+                        <li class="lnb_1depth "><a href="/partner/contract/list.html">계약 관리</a></li>
+                        <li class="lnb_1depth "><a href="">작업스케줄 관리</a></li>
+                        <li class="lnb_1depth "><a href="/partner/workerTask/list.html">작업자 배정</a></li>
+                        <li class="lnb_1depth "><a href="/partner/rent/list.html">장비 임대 현황</a></li>
+                        <li class="lnb_1depth active"><a href="/partner/board/notice/list.html">공지사항</a></li>
+                        <li class="lnb_1depth "><a href="/partner/board/data/list.html">자료실</a></li>
+                        <li class="lnb_1depth "><a href="/partner/inquiry/list.html">1:1 문의</a></li>
+                        <li class="lnb_1depth "><a href="">정산 관리</a></li>
                     </ul>
                 </div>
 
-
                 <div class="content">
-                    <h3 class="adm_title">게시판 작성</h3>
+                    <h3 class="adm_title">공지사항</h3>
                     
                     <div class="conarea">
                         <div class="table_wrap">
@@ -87,28 +87,8 @@
                                     <col width="35%">
                                 </colgroup>
                                 <tr>
-                                    <th>유형</th>
-                                    <td colspan="3">공지사항</td>
-                                </tr>
-                                <tr>
                                     <th>제목</th>
                                     <td colspan="3">플랫폼 사이트 오픈 공지사항</td>
-                                </tr>
-                                <tr>
-                                    <th>중요여부</th>
-                                    <td>중요</td>
-                                    <th>공개여부</th>
-                                    <td>공개</td>
-                                </tr>
-                                <tr>
-                                    <th>등록자</th>
-                                    <td>최고관리자</td>
-                                    <th>등록일</th>
-                                    <td>2026.03.28</td>
-                                </tr>
-                                <tr>
-                                    <th>조회수</th>
-                                    <td colspan="3">73</td>
                                 </tr>
                                 <tr>
                                     <th>내용</th>
@@ -120,73 +100,26 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>파일첨부</th>
+                                    <th>첨부파일</th>
                                     <td colspan="3">
                                         <div class="file_wrap">
                                             <div class="file_row">
                                                 <button class="btn_sm">파일명.jpg</button>
-                                                <button type="button" class="btn_xs gray">삭제</button>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
                             </table>
                         </div>
-                    <div class="modal_btn_wrap">
-                        <button class="btn_md" onclick="location.href='modify.html'">수정</button>
+                        <div class="modal_btn_wrap">
+                            <button class="btn_md gray" onclick="location.href='list.html'">목록</button>
+                        </div>
                     </div>
-                    </div>
-                    
+
                 </div>
             </div>
         </div>
     </div>
 </body>
 
-
 </html>
-<script>
-    function modalOpen(id) {
-        document.querySelectorAll('.modal_wrap').forEach(m => m.style.display = 'none');
-        document.getElementById(id).style.display = 'flex';
-    }
-
-    document.querySelectorAll('.modal_wrap').forEach(modal => {
-        modal.addEventListener('click', function(e){
-            if(e.target.classList.contains('modal_wrap')){
-                this.style.display = 'none';
-            }
-        });
-    });
-
-    // 파일 추가/삭제
-    document.addEventListener("click", function (e) {
-        if (e.target.classList.contains("btn_add")) {
-            const wrap = e.target.closest(".file_wrap");
-            const row = e.target.closest(".file_row");
-            const clone = row.cloneNode(true);
-            clone.querySelector("input").value = "";
-            if (!clone.querySelector(".btn_del")) {
-                const delBtn = document.createElement("button");
-                delBtn.type = "button";
-                delBtn.className = "btn_xs btn_line btn_del";
-                delBtn.textContent = "삭제";
-                clone.appendChild(delBtn);
-            }
-            wrap.appendChild(clone);
-        }
-
-        if (e.target.classList.contains("btn_del")) {
-            const row = e.target.closest(".file_row");
-            row.remove();
-        }
-    });
-
-    /* 토글 버튼 */
-    $(document).on('click', '.btn_group_toggle button', function () {
-        $(this).siblings().removeClass('on');
-        $(this).addClass('on');
-    });
-            
-
-</script>

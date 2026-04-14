@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <link href="/favicon.ico" rel="icon">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>Platform - Admin</title>
+    <title>Platform - Partner</title>
     <meta content="" name="keywords" />
     <meta content="website" property="og:type">
     <meta content="template" property="og:url">
@@ -26,6 +26,7 @@
         $(function () {
             function bindPcNavHover() {
                 const isPc = $(window).width() >= 720;
+
                 if (isPc) {
                     $('.nav_1depth')
                         .off('.pcNav')
@@ -48,6 +49,7 @@
             $('.nav_open').click(function () {
                 $(this).toggleClass('active');
                 $('nav > ul').toggleClass('open');
+
                 if ($(this).hasClass('active')) {
                     $('body').addClass('no-scroll');
                 } else {
@@ -70,26 +72,35 @@
                     </div>
                     <ul>
                         <li class="lnb_1depth"><a href="">홈</a></li>
-                        <li class="lnb_1depth "><a href="/admin/user/list.html">사용자 관리</a></li>
-                        <li class="lnb_1depth"><a href="/admin/agency/list.html">대리점 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/worker/list.html">작업자 관리</a></li>
-                        <li class="lnb_1depth"><a href="/admin/client/list.html">고객사 관리</a></li>
-                        <li class="lnb_1depth"><a href="/admin/ca_status/list.html">고객사-대리점 현황</a></li>
-                        <li class="lnb_1depth"><a href="/admin/distribution/list.html">영업권 신청현황</a></li>
-                        <li class="lnb_1depth"><a href="/admin/contract/list.html">계약 관리</a></li>
-                        <li class="lnb_1depth "><a href="/admin/territory/list.html">영업권역 관리</a></li>
-                        <li class="lnb_1depth"><a href="/admin/equip/list.html">장비 관리</a></li>
-                        <li class="lnb_1depth active"><a href="/admin/rent/list.html">장비 임대 현황</a></li>
-                        <li class="lnb_1depth"><a href="/admin/board/list.html">게시판 관리</a></li>
-                        <li class="lnb_1depth"><a href="/admin/inquiry/list.html">1:1 문의 관리</a></li>
+                        <li class="lnb_1depth "><a href="/partner/agency/modify_org.html">대리점 정보 관리</a></li>
+                        <li class="lnb_1depth "><a href="/partner/worker/list.html">작업자 관리</a></li>
+                        <li class="lnb_1depth "><a href="/partner/client/list.html">고객사 관리</a></li>
+                        <li class="lnb_1depth "><a href="/partner/territory/list.html">영업권 관리</a></li>
+                        <li class="lnb_1depth "><a href="/partner/distribution/list.html">영업권 신청현황</a></li>
+                        <li class="lnb_1depth "><a href="/partner/contract/list.html">계약 관리</a></li>
+                        <li class="lnb_1depth "><a href="">작업스케줄 관리</a></li>
+                        <li class="lnb_1depth "><a href="/partner/workerTask/list.html">작업자 배정</a></li>
+                        <li class="lnb_1depth active"><a href="/partner/rent/list.html">장비 임대 현황</a></li>
+                        <li class="lnb_1depth "><a href="/partner/board/notice/list.html">공지사항</a></li>
+                        <li class="lnb_1depth "><a href="/partner/board/data/list.html">자료실</a></li>
+                        <li class="lnb_1depth "><a href="/partner/inquiry/list.html">1:1 문의</a></li>
+                        <li class="lnb_1depth "><a href="">정산 관리</a></li>
                     </ul>
                 </div>
 
                 <div class="content">
                     <h3 class="adm_title">장비 임대 현황</h3>
 
-                    <!-- 검색 영역 -->
                     <div class="search">
+                        <div class="search_input">
+                            <h5>승인여부</h5>
+                            <select name="" id="">
+                                <option value="">전체</option>
+                                <option value="">승인대기</option>
+                                <option value="">반려</option>
+                                <option value="">승인</option>
+                            </select>
+                        </div>
                         <div class="search_input">
                             <h5>구분</h5>
                             <select name="" id="">
@@ -99,132 +110,163 @@
                                 <option value="">약품분무기</option>
                                 <option value="">열화상카메라</option>
                                 <option value="">집진기</option>
-                            </select>
-                        </div>
-                        <div class="search_input">
-                            <h5>승인여부</h5>
-                            <select name="" id="">
-                                <option value="">전체</option>
-                                <option value="">승인대기</option>
-                                <option value="">승인</option>
-                                <option value="">반려</option>
+                                <option value="">약품분무기</option>
+                                <option value="">열화상카메라</option>
+                                <option value="">집진기</option>
                             </select>
                         </div>
                         <div class="search_input">
                             <h5>A/S여부</h5>
                             <select name="" id="">
                                 <option value="">전체</option>
-                                <option value="">신청</option>
-                                <option value="">수리중</option>
-                                <option value="">완료</option>
+                                <option value="">A/S 신청</option>
+                                <option value="">A/S 처리중</option>
                             </select>
-                        </div>
-                        <div class="search_input">
-                            <h5>대리점</h5>
-                            <div class="flex">
-                                 <p  class="scope">
-                                    <input type="text">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 12 12" fill="none">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.91999 1.0125C3.87299 1.1085 2.97349 1.525 2.24949 2.2495C1.59649 2.9025 1.19549 3.693 1.04649 4.6225C1.00049 4.9085 1.00049 5.5915 1.04649 5.8775C1.19549 6.807 1.59649 7.5975 2.24949 8.2505C2.89999 8.9015 3.69599 9.305 4.62249 9.4535C4.90849 9.4995 5.59149 9.4995 5.87749 9.4535C6.55935 9.34607 7.20632 9.07954 7.76599 8.6755L7.88149 8.59301L8.83599 9.5435C9.69299 10.398 9.79999 10.498 9.88849 10.527C10.2945 10.662 10.6615 10.302 10.53 9.8975C10.497 9.7965 10.4355 9.73051 9.54399 8.83601L8.59299 7.8815L8.67549 7.766C9.07953 7.20633 9.34606 6.55937 9.45349 5.8775C9.49949 5.5915 9.49949 4.9085 9.45349 4.6225C9.30499 3.696 8.90149 2.9 8.25049 2.2495C7.61261 1.60546 6.78384 1.18458 5.88749 1.0495C5.69199 1.0195 5.09399 0.996505 4.91999 1.0125ZM5.80049 2.0475C7.16799 2.296 8.19899 3.3295 8.45499 4.71C8.50099 4.9575 8.50099 5.5425 8.45499 5.79C8.19799 7.1755 7.17549 8.198 5.78999 8.455C5.54249 8.501 4.95749 8.501 4.70999 8.455C3.45799 8.2225 2.47599 7.345 2.13049 6.1505C1.96653 5.582 1.96125 4.97947 2.11523 4.40818C2.2692 3.83689 2.57655 3.31862 3.00399 2.9095C3.49969 2.43121 4.13459 2.12286 4.81699 2.029C5.05599 1.995 5.56199 2.0045 5.80049 2.0475Z" fill="#CCCCCC"/>
-                                    </svg>                                    
-                                </p>
-                                <input type="text">
-                            </div>
                         </div>
                         <button class="btn_md">조회</button>
                     </div>
 
-                    <!-- 리스트 -->
+
                     <div class="conarea">
                         <div class="top_btn">
-                            <p class="caption">장비 임대 리스트 (총 75건)</p>
+                            <p class="caption">장비 임대 현황 (총 75건)</p>
                             <div class="btn_wrap">
-                                <a href="" class="btn_sm">승인</a>
-                                <a href="" class="btn_sm">반려</a>
+                                <input type="date" name="" id=""> ~
+                                <input type="date" name="" id="">
+                                <a href="" class="btn_sm_solid">임대신청</a>
                             </div>
                         </div>
                         <div class="table_wrap">
                             <table class="table_b tb_list">
-                                <colgroup>
-                                    <col width="40px">
-                                    <col width="55px">
-                                    <col width="*">
-                                    <col width="130px">
-                                    <col width="100px">
-                                    <col width="80px">
-                                    <col width="*">
-                                    <col width="110px">
-                                    <col width="110px">
-                                    <col width="*">
-                                </colgroup>
                                 <thead>
                                     <tr>
-                                        <th><input type="checkbox"></th>
-                                        <th>No</th>
-                                        <th>구분</th>
-                                        <th>장비번호</th>
+                                        <th>신청일</th>
+                                        <th>신청 임대기간</th>
                                         <th>승인여부</th>
-                                        <th>A/S여부</th>
-                                        <th>임대 대리점</th>
-                                        <th>임대 신청일</th>
                                         <th>승인/반려일</th>
                                         <th>확정 임대기간</th>
+                                        <th>구분</th>
+                                        <th>장비번호</th>
+                                        <th>반납일</th>
+                                        <th>A/S신청</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr onclick="location.href='view_pending.html';" style="cursor: pointer;">
-                                        <td><input type="checkbox"></td>
-                                        <td>75</td>
+                                    <tr>
+                                        <td>2026.01.01</td>
+                                        <td>2026.01.01 ~ 2026.12.31</td>
+                                        <td>승인대기</td>
+                                        <td>-</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2026.01.01</td>
+                                        <td>2026.01.01 ~ 2026.12.31</td>
+                                        <td>반려</td>
+                                        <td>2026.01.05</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2025.05.08</td>
+                                        <td>2025.06.01 ~ 2025.07.31</td>
+                                        <td>승인</td>
+                                        <td>2025.05.08</td>
+                                        <td>2025.06.01 ~ 2025.07.31</td>
                                         <td>고압세척기</td>
                                         <td>EQ001_15211</td>
-                                        <td>승인대기</td>
-                                        <td></td>
-                                        <td>테슬라</td>
-                                        <td>2026.01.01</td>
                                         <td>-</td>
-                                        <td>-</td>
+                                        <td><button class="btn_sm_tb">A/S 신청</button></td>
                                     </tr>
-                                    <tr onclick="location.href='view_reject.html';" style="cursor: pointer;">
-                                        <td><input type="checkbox"></td>
-                                        <td>74</td>
-                                        <td>고압세척기</td>
-                                        <td>EQ001_15212</td>
-                                        <td>반려</td>
-                                        <td></td>
-                                        <td>현대자동차</td>
-                                        <td>2026.01.01</td>
-                                        <td>2026.01.02</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr onclick="location.href='view_approve.html';" style="cursor: pointer;">
-                                        <td><input type="checkbox"></td>
-                                        <td>73</td>
-                                        <td>고압세척기</td>
-                                        <td>EQ001_15213</td>
+                                    <tr>
+                                        <td>2025.05.08</td>
+                                        <td>2025.06.01 ~ 2025.07.31</td>
                                         <td>승인</td>
-                                        <td></td>
-                                        <td>LG전자</td>
-                                        <td>2026.01.01</td>
-                                        <td>2026.01.02</td>
-                                        <td>2026.02.01 ~ 2026.05.31</td>
+                                        <td>2025.05.08</td>
+                                        <td>2025.06.01 ~ 2025.07.31</td>
+                                        <td>진공흡입기</td>
+                                        <td>CF005_90012</td>
+                                        <td>-</td>
+                                        <td><button class="btn_sm_tb">A/S 신청</button></td>
                                     </tr>
-                                    <tr  onclick="location.href='view_as.html';" style="cursor: pointer;">
-                                        <td><input type="checkbox"></td>
-                                        <td>72</td>
-                                        <td>고압세척기</td>
-                                        <td>EQ001_15214</td>
+                                    <tr>
+                                        <td>2025.05.08</td>
+                                        <td>2025.06.01 ~ 2025.07.31</td>
                                         <td>승인</td>
-                                        <td>신청</td>
-                                        <td>삼성전자</td>
-                                        <td>2026.01.01</td>
-                                        <td>2026.01.02</td>
-                                        <td>2026.02.01 ~ 2026.05.31</td>
+                                        <td>2025.05.08</td>
+                                        <td>2025.06.01 ~ 2025.07.31</td>
+                                        <td>약품분무기</td>
+                                        <td>AB005_71243</td>
+                                        <td>-</td>
+                                        <td><button class="btn_sm_tb">A/S 신청</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2025.05.08</td>
+                                        <td>2025.06.01 ~ 2025.07.31</td>
+                                        <td>승인</td>
+                                        <td>2025.05.08</td>
+                                        <td>2025.06.01 ~ 2025.07.31</td>
+                                        <td>얼화상카메라</td>
+                                        <td>SS008_16583</td>
+                                        <td>-</td>
+                                        <td><button class="btn_sm_tb gray">A/S 처리중</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2025.05.08</td>
+                                        <td>2025.06.01 ~ 2025.07.31</td>
+                                        <td>승인</td>
+                                        <td>2025.05.08</td>
+                                        <td>2025.06.01 ~ 2025.07.31</td>
+                                        <td>집진기</td>
+                                        <td>P0093_15416</td>
+                                        <td>-</td>
+                                        <td><button class="btn_sm_tb">A/S 신청</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2025.02.08</td>
+                                        <td>2025.02.10 ~ 2025.02.28</td>
+                                        <td>승인</td>
+                                        <td>2025.02.28</td>
+                                        <td>2025.06.01 ~ 2025.07.31</td>
+                                        <td>약품분무기</td>
+                                        <td>AB005_71243</td>
+                                        <td>2025.03.01</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2025.02.08</td>
+                                        <td>2025.02.10 ~ 2025.02.28</td>
+                                        <td>승인</td>
+                                        <td>2025.02.28</td>
+                                        <td>2025.06.01 ~ 2025.07.31</td>
+                                        <td>얼화상카메라</td>
+                                        <td>SS008_16583</td>
+                                        <td>2025.03.01</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2025.02.08</td>
+                                        <td>2025.02.10 ~ 2025.02.28</td>
+                                        <td>승인</td>
+                                        <td>2025.02.28</td>
+                                        <td>2025.06.01 ~ 2025.07.31</td>
+                                        <td>집진기</td>
+                                        <td>P0093_15416</td>
+                                        <td>2025.03.01</td>
+                                        <td></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
-
                     </div>
+
                    <div class="pagenation">
                         <ul>
                             <li class="arrow"><a href="?page=1">« 처음</a></li>
@@ -241,10 +283,10 @@
                         </ul>
                     </div>
 
-                </div><!-- /content -->
-            </div><!-- /cont -->
-        </div><!-- /admin -->
-    </div><!-- /wrap -->
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -4,10 +4,19 @@
 .admin a.btn_sm {padding: 10px 12px;color: #333;background: #fff;font-size: 1rem;line-height: 1; text-align: center;display: inline-block;border-radius: 3px;border: 1px solid #DDD;background: #FFF;display: flex;align-items:center; gap: 6px;}
 .admin a.btn_sm_solid{padding: 10px 12px;color: #fff;background: #12633D;font-size: 1rem;line-height: 1; text-align: center;display: inline-block;border-radius: 3px;display: flex;align-items:center; gap: 6px;}
 .admin a.btn_sm:hover, .admin a.btn_sm:focus{background-color: #f4f4f6;}
+.admin a.btn_sm_tb {padding: 5px 9px;color: #333;background: #fff;font-size: 1rem;line-height: 1; text-align: center;display: inline-block;border-radius: 3px;border: 1px solid #DDD;background: #FFF;display: flex;align-items:center; gap: 6px;}
+.admin a.btn_sm_tb:hover, .admin a.btn_sm_tb:focus{background-color: #f4f4f6;}
+
 .admin button.btn_sm {padding: 10px 12px;color: #333;background: #fff;font-size: 1rem;text-align: center;display: inline-block;border-radius: 3px;border: 1px solid #DDD;background: #FFF;}
 .admin button.btn_sm:hover, .admin button.btn_sm:focus{background-color: #f4f4f6;}
+
+.admin button.btn_sm_tb {padding: 5px 9px;color: #333;background: #fff;font-size: 1rem;text-align: center;display: inline-block;border-radius: 3px;border: 1px solid #DDD;background: #FFF;}
+.admin button.btn_sm_tb:hover, .admin button.btnbtn_sm_tb_sm:focus{background-color: #f4f4f6;}
+
+
 .admin a.btn_md {padding: 12px 25px;background: #12633D;color: #fff;text-align: center;display: inline-block;border-radius: 5px;}
 .admin button.btn_md {padding: 12px 25px;background: #12633D;color: #fff;text-align: center;display: inline-block;border-radius: 5px;}
+.admin button.btn_md_outline {padding: 12px 25px;background: #fff;border: 1px solid #DDD;color: #333;text-align: center;display: inline-block;border-radius: 5px;}
 .admin a.btn_lg {padding: 16px 35px;background: #12633D;font-size: 1.3rem;color: #fff;text-align: center;display: inline-block;font-family: var(--font-serif);letter-spacing: var(--font-serif-spacing);border-radius: 5px;}
 .admin button.btn_lg {padding: 16px 35px;background: #12633D;font-size: 1.3rem;color: #fff;text-align: center;display: inline-block;border-radius: 5px;}
 .admin a.btn_black {color: #000;}
@@ -15,6 +24,7 @@
 .admin button.trans {background: #12633D;color: #fff;}
 .admin button.disabled {background: #ccc;color: #9e9e9e;}
 .admin button.gray {background: #a8a8a8;color: #fff;}
+.admin button.gray:hover, .admin button.gray:focus{background:#a8a8a8;}
 .admin .btn_under {text-decoration: underline;color: #222;font-weight: 500;}
 .admin a.btn_line {border: 1px solid #353535;background: none;color: #353535;}
 .admin button.btn_line {border: 1px solid #353535;background: none;color: #353535;}
@@ -210,7 +220,7 @@ box-shadow: 3px 0 10px 0 rgba(0, 0, 0, 0.10);}
 .admin p.caption {margin:0 0 8px;color: #333;font-weight: 500;}
 .admin .top_btn {display: flex;justify-content: space-between;align-items: end;margin: 0 0 12px;}
 .admin .top_btn p.caption {margin: 0;}
-.admin .top_btn div.btn_wrap {display: flex;gap:6px;margin: 0;}
+.admin .top_btn div.btn_wrap {display: flex;gap:6px;margin: 0;align-items: center;}
 .admin .file_wrap .file_row {margin: 0 0 10px;}
 .admin .file_wrap .file_row .file_name {background: #efefef;border-radius: 5px;display: inline-block;padding: 2px 8px;}
 .admin .detail_wrap > div {margin: 0 0 40px;}
@@ -261,7 +271,7 @@ font-size: 0.7rem;cursor: pointer;padding: 0;display: flex;align-items: center;j
 
 /* modal */
 .admin .modal_wrap { position: fixed;top:0;left:0;width: 100%;height: 100vh;background: rgba(53, 53, 53, 0.8);z-index: 99999;display: none;}
-.admin .modal {max-width: 1200px;position: absolute;top:50%;left:50%;width: 100%; max-height:90vh;background: #fff;transform: translate(-50%, -50%);overflow-y: auto;padding: 32px;}
+.admin .modal {max-width: 1024px;position: absolute;top:50%;left:50%;width: 100%; max-height:90vh;background: #fff;transform: translate(-50%, -50%);overflow-y: auto;padding: 32px;}
 .admin .modal > div {margin:0 0 32px;}
 .admin .modal img {width: 100%;}
 .admin .modal_close {display: inline-block;position: absolute;right:20px;top:20px;}
