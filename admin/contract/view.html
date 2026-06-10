@@ -433,80 +433,184 @@
                             </div>
 
                             <!-- 최종 계약 정보 -->
-                             <div>
-                            <h4 class="adm_subtitle">최종 계약 정보 &nbsp; <label><input type="checkbox"> 견적정보 불러오기</label></h4>
-                            <table class="table_a">
-                                <colgroup>
-                                    <col width="15%">
-                                    <col width="35%">
-                                    <col width="15%">
-                                    <col width="35%">
-                                </colgroup>
-                                <tbody>
-                                    <tr>
-                                        <th>계약일자</th>
-                                        <td><input type="date" value="2026-03-15" disabled></td>
-                                        <th>계약기간</th>
-                                        <td>
-                                            <div class="flex">
-                                                <input type="date" value="2026-04-01"  disabled>
-                                                <input type="date" value="2026-12-31"  disabled>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>장소</th>
-                                        <td>
-                                            <div class="flex">
-                                                <button type="button" class="btn_sm">우편번호 찾기</button>
-                                                <input type="text" value="[12512] 서울시 강남구 강남대로 17"  disabled>
-                                            </div>
-                                             <input type="text" value="테슬라빌딩 25~39층" class="wfull"  disabled>
-                                            
-                                        </td>
-                                        <th >작업 개수</th>
-                                        <td>
-                                            <div class="flex">
-                                                <span>스탠드</span>
-                                                <select name="" id="" disabled>
-                                                    <option value="" selected>5</option>
-                                                </select>
-
-                                                <span>천장</span>
-                                                <select name="" id=""  disabled>
-                                                    <option value="" selected>20</option>
-                                                </select>
-                                                
-                                                <span>벽걸이</span>
-                                                <select name="" id=""  disabled>
-                                                    <option value="" selected>12</option>
-                                                </select>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>총 비용</th>
-                                        <td colspan="3">
-                                            <div class="flex">
-                                                <input type="text" value="560,000,000" disabled>
-                                                <span>원</span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>비고</th>
-                                        <td colspan="3" disabled>
-                                            <textarea class="wfull" disabled>-</textarea>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>계약서</th>
-                                        <td colspan="3">
-                                            <button class="btn_sm">테슬라 계약서[2026.03.15].pdf</button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div>
+                                <h4 class="adm_subtitle">최종 계약 정보</h4>
+                                <table class="table_a">
+                                    <colgroup>
+                                        <col width="15%">
+                                        <col width="35%">
+                                        <col width="15%">
+                                        <col width="35%">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>계약일자</th>
+                                            <td><input type="text" value="2026.05.26" disabled></td>
+                                            <th>계약기간</th>
+                                            <td>
+                                                <div class="flex">
+                                                    <input type="text" value="2026.06.01" disabled> ~
+                                                    <input type="text" value="2026.07.31" disabled>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>총 비용</th>
+                                            <td colspan="3">
+                                                <div class="flex">
+                                                    <input type="text" value="530,000,000" disabled>
+                                                    <span>원</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>비고</th>
+                                            <td colspan="3">
+                                                <textarea class="wfull" disabled>총 3군데 작업장소가 존재하며, 전체 에어켄 대수는 127대로 확인
+스케줄은 고객사와 직접 협의하여 조정 가능</textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>작업장소</th>
+                                            <td colspan="3">
+                                                <div class="flex-end" style="margin:0 0 6px;">
+                                                    <button type="button" class="btn_sm">행추가</button>
+                                                </div>
+                                                <table class="table_b">
+                                                    <thead>
+                                                        <tr>
+                                                            <th >장소코드</th>
+                                                            <th style="width:40%">주소</th>
+                                                            <th style="width:40%">상세주소</th>
+                                                            <th ></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>A</td>
+                                                            <td>
+                                                                <div class="flex">
+                                                                    <button type="button" class="btn_sm">우편번호 찾기</button>
+                                                                    <input type="text" value="(12512) 서울시 강남구 강남대로 17" disabled>
+                                                                </div>
+                                                            </td>
+                                                            <td><input type="text" value="1층 A~D구역" class="wfull" disabled></td>
+                                                            <td><button type="button" class="btn_sm">행삭제</button></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>B</td>
+                                                            <td>
+                                                                <div class="flex">
+                                                                    <button type="button" class="btn_sm">우편번호 찾기</button>
+                                                                    <input type="text" disabled>
+                                                                </div>
+                                                            </td>
+                                                            <td><input type="text" class="wfull" disabled></td>
+                                                            <td><button type="button" class="btn_sm">행삭제</button></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>C</td>
+                                                            <td>
+                                                                <div class="flex">
+                                                                    <button type="button" class="btn_sm">우편번호 찾기</button>
+                                                                    <input type="text" disabled>
+                                                                </div>
+                                                            </td>
+                                                            <td><input type="text" class="wfull" disabled></td>
+                                                            <td><button type="button" class="btn_sm">행삭제</button></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>작업환경<br>(에어컨유형/작업대수)</th>
+                                            <td colspan="3">
+                                                <div class="flex-end" style="margin:0 0 6px;">
+                                                    <button type="button" class="btn_sm">행추가</button>
+                                                </div>
+                                                <table class="table_b">
+                                                    <thead>
+                                                        <tr>
+                                                            <th >환경코드</th>
+                                                            <th>장소 코드</th>
+                                                            <th>제조사</th>
+                                                            <th>모델코드</th>
+                                                            <th>모델명</th>
+                                                            <th>형태</th>
+                                                            <th>구분</th>
+                                                            <th>작업대수</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>A-1</td>
+                                                            <td>
+                                                                <select disabled class="wfull">
+                                                                    <option selected>A</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select disabled  class="wfull">
+                                                                    <option selected>삼성</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select disabled  class="wfull">
+                                                                    <option selected>DJK-591-OZX</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select disabled  class="wfull">
+                                                                    <option selected>삼성 무풍 에어컨</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select disabled  class="wfull">
+                                                                    <option selected>스탠드</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select disabled  class="wfull">
+                                                                    <option selected>창문형</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select disabled  class="wfull">
+                                                                    <option selected>3대</option>
+                                                                </select>
+                                                            </td>
+                                                            <td><button type="button" class="btn_sm">행삭제</button></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>A-2</td>
+                                                            <td><select disabled  class="wfull"><option>A</option></select></td>
+                                                            <td><select disabled  class="wfull"><option>선택</option></select></td>
+                                                            <td><select disabled  class="wfull"><option>선택</option></select></td>
+                                                            <td><select disabled  class="wfull"><option>선택</option></select></td>
+                                                            <td><select disabled  class="wfull"><option>선택</option></select></td>
+                                                            <td><select disabled  class="wfull"><option>선택</option></select></td>
+                                                            <td><select disabled  class="wfull"><option>선택</option></select></td>
+                                                            <td><button type="button" class="btn_sm">행삭제</button></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td><select disabled  class="wfull"><option>선택</option></select></td>
+                                                            <td><select disabled  class="wfull"><option>선택</option></select></td>
+                                                            <td><select disabled  class="wfull"><option>선택</option></select></td>
+                                                            <td><select disabled  class="wfull"><option>선택</option></select></td>
+                                                            <td><select disabled  class="wfull"><option>선택</option></select></td>
+                                                            <td><select disabled  class="wfull"><option>선택</option></select></td>
+                                                            <td><select disabled  class="wfull"><option>선택</option></select></td>
+                                                            <td><button type="button" class="btn_sm">행삭제</button></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
 
                             <div class="modal_btn_wrap">

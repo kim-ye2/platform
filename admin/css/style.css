@@ -150,13 +150,14 @@ box-shadow: 3px 0 10px 0 rgba(0, 0, 0, 0.10);}
 .admin .scroll-y {overflow-y: auto;height: 60vh;}
 .admin table {width: 100%;margin:0 0 10px 0;}
 .admin .table_a.table_a_double td {width: 84%;}
-.admin .table_a tr th {padding: 10px 12px;border-bottom: 1px solid #ddd;border-left: 1px solid #ddd;text-align: left;background-color: #f4f4f6;}
+.admin .table_a tr  th {padding: 10px 12px;border-bottom: 1px solid #ddd;border-left: 1px solid #ddd;text-align: left;background-color: #f4f4f6;}
 .admin .table_a tr:first-child {border-top: 1px solid #aaa;}
 .admin .table_a tr th:first-child {border-left: none;}
 .admin .table_a tr td {padding: 10px 12px;border-bottom: 1px solid #ddd;}
 .admin .table_a tr td.center {text-align: center;}
 .admin .tb_list tr:hover{background-color:#f4f4f6;}
-.admin .table_b tr th {padding: 8px 12px;border-bottom: 1px solid #ddd;background: #f4f4f5;    border-top: 1px solid #aaa;border-right:1px solid #ddd;}
+
+.admin .table_b tr th {padding: 8px 12px;border-bottom: 1px solid #ddd;background: #f4f4f5;    border-top: 1px solid #aaa;border-right:1px solid #ddd;text-align: center;}
 .admin .table_b tr th:last-child{border-right: none;}
 .admin .table_b tr th.br{border-right:1px solid #ddd;}
 .admin .table_b tr td {padding: 8px 12px;border-bottom: 1px solid #ddd;text-align: center;}
@@ -246,6 +247,11 @@ font-size: 0.7rem;cursor: pointer;padding: 0;display: flex;align-items: center;j
 .admin .modal img {width: 100%;}
 .admin .modal_close {display: inline-block;position: absolute;right:20px;top:20px;}
 .admin .modal_btn_wrap {text-align: center;margin:30px 0 0;}
+/* 대리점 조회 모달 */
+.agency_row {cursor: pointer;}
+.agency_row:hover {background-color: #f4f4f6;}
+.agency_row.selected {background-color: #dde8f5 !important;}
+
 
 /* pagenation */
 .admin .pagenation {margin:20px 0 0;}
