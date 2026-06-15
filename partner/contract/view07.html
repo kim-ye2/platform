@@ -427,7 +427,7 @@
                             
                             <!-- 최종 계약 정보 -->
                             <div>
-                                <h4 class="adm_subtitle">최종 계약 정보 &nbsp; <label><input type="checkbox"> 견적정보 불러오기</label></h4>
+                                <h4 class="adm_subtitle">최종 계약 정보</h4>
                                 <table class="table_a">
                                     <colgroup>
                                         <col width="15%">
@@ -437,76 +437,192 @@
                                     </colgroup>
                                     <tbody>
                                         <tr>
-                                            <th>계약 일자</th>
-                                            <td><input type="date" name="" id=""></td>
+                                            <th>계약일자</th>
+                                            <td><input type="date"></td>
                                             <th>계약기간</th>
-                                            <td><div class="flex"><input type="date" name="" id=""> ~ <input type="date" name="" id=""></div></td>
+                                            <td>
+                                                <div class="flex">
+                                                    <input type="date"> ~ <input type="date">
+                                                </div>
+                                            </td>
                                         </tr>
-                                        <tr>
-                                            <th>장소</th>
-                                            <td>
-                                                <div class="flex mt3">
-                                                    <input type="text" value="">
-                                                    <button type="button" class="btn_sm">우편번호 찾기</button>
-                                                </div>
-                                                <input type="text" class="wfull" >
-                                            </td>
-                                            <th>작업 개수</th>
-                                            <td>
-                                               <div class="flex">
-                                                    <span>스탠드</span>
-                                                    <select>
-                                                        <option value="">선택</option>
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                        <option>4</option>
-                                                        <option>5</option>
-                                                    </select>
-                                                    <span>천장</span>
-                                                    <select>
-                                                        <option value="">선택</option>
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                    </select>
-                                                    <span>벽걸이</span>
-                                                    <select>
-                                                        <option value="">선택</option>
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                    </select>
-                                                </div>
-                                            </td>
-                                        </tr>       
                                         <tr>
                                             <th>총 비용</th>
                                             <td colspan="3">
-                                                <div class="flex"><input type="text" > 원</td></div>
-                                        </tr>                                       
+                                                <div class="flex">
+                                                    <input type="text"> 원
+                                                </div>
+                                            </td>
+                                        </tr>
                                         <tr>
                                             <th>비고</th>
                                             <td colspan="3">
                                                 <textarea class="wfull"></textarea>
                                             </td>
-                                        </tr>                                    
+                                        </tr>
                                         <tr>
-                                            <th>계약서</th>
+                                            <th>작업장소</th>
                                             <td colspan="3">
-                                                <input type="file" name="" id="">
+                                                <div class="inner_tbl_btn_wrap">
+                                                    <button type="button" class="btn_sm_tb">행추가</button>
+                                                </div>
+                                                <table class="table_c">
+                                                    <thead>
+                                                        <tr>
+                                                            <th width="70">장소코드</th>
+                                                            <th>주소</th>
+                                                            <th>상세수소</th>
+                                                            <th width="60"></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="center">A</td>
+                                                            <td>
+                                                                <div class="flex">
+                                                                    <button type="button" class="btn_sm_tb">우편번호 찾기</button>
+                                                                    <input type="text"  value="(12512) 서울시 강남구 강남대로 17"  class="flex_full">
+                                                                </div>
+                                                            </td>
+                                                            <td><input type="text" class="wfull" value="1층 A~D구역"></td>
+                                                            <td class="center"><button type="button" class="btn_sm_tb">행삭제</button></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="center">B</td>
+                                                            <td>
+                                                                <div class="flex">
+                                                                    <button type="button" class="btn_sm_tb">우편번호 찾기</button>
+                                                                    <input type="text"  class="flex_full">
+                                                                </div>
+                                                            </td>
+                                                            <td><input type="text" class="wfull"></td>
+                                                            <td class="center"><button type="button" class="btn_sm_tb">행삭제</button></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="center">C</td>
+                                                            <td>
+                                                                <div class="flex">
+                                                                    <button type="button" class="btn_sm_tb">우편번호 찾기</button>
+                                                                    <input type="text" class="flex_full">
+                                                                </div>
+                                                            </td>
+                                                            <td><input type="text" class="wfull"></td>
+                                                            <td class="center"><button type="button" class="btn_sm_tb">행삭제</button></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </td>
-                                        </tr>  
+                                        </tr>
+                                        <tr>
+                                            <th>작업환경<br>(에이컨유형/작업대수)</th>
+                                            <td colspan="3">
+                                                <div class="inner_tbl_btn_wrap">
+                                                    <button type="button" class="btn_sm_tb">행추가</button>
+                                                </div>
+                                                <table class="table_c">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>환경코드</th>
+                                                            <th>장소코드</th>
+                                                            <th>제조사</th>
+                                                            <th>모델코드</th>
+                                                            <th>모델명</th>
+                                                            <th>형태</th>
+                                                            <th>구분</th>
+                                                            <th>작업대수</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="center">A-1</td>
+                                                            <td>
+                                                                <select class="wfull">
+                                                                    <option selected>A</option>
+                                                                    <option>B</option>
+                                                                    <option>C</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="wfull">
+                                                                    <option selected>삼성</option>
+                                                                    <option>LG</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="wfull">
+                                                                    <option selected>DJK-591-OZX</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="wfull">
+                                                                    <option selected>삼성 무풍 에어컨</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="wfull">
+                                                                    <option selected>스탠드</option>
+                                                                    <option>천장</option>
+                                                                    <option>벽걸이</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="wfull">
+                                                                    <option selected>창문형</option>
+                                                                    <option>벽걸이형</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="wfull">
+                                                                    <option>1</option>
+                                                                    <option>2</option>
+                                                                    <option selected>3</option>
+                                                                    <option>4</option>
+                                                                    <option>5</option>
+                                                                </select>
+                                                            </td>
+                                                            <td class="center"><button type="button" class="btn_sm_tb">행삭제</button></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="center">B-1</td>
+                                                            <td>
+                                                                <select class="wfull">
+                                                                    <option>선택</option>
+                                                                    <option selected>B</option>
+                                                                    <option>C</option>
+                                                                </select>
+                                                            </td>
+                                                            <td><select class="wfull"><option>선택</option></select></td>
+                                                            <td><select class="wfull"><option>선택</option></select></td>
+                                                            <td><select class="wfull"><option>선택</option></select></td>
+                                                            <td><select class="wfull"><option>선택</option></select></td>
+                                                            <td><select class="wfull"><option>선택</option></select></td>
+                                                            <td><select class="wfull"><option>선택</option></select></td>
+                                                            <td class="center"><button type="button" class="btn_sm_tb">행삭제</button></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="center"></td>
+                                                            <td><select class="wfull"><option>선택</option></select></td>
+                                                            <td><select class="wfull"><option>선택</option></select></td>
+                                                            <td><select class="wfull"><option>선택</option></select></td>
+                                                            <td><select class="wfull"><option>선택</option></select></td>
+                                                            <td><select class="wfull"><option>선택</option></select></td>
+                                                            <td><select class="wfull"><option>선택</option></select></td>
+                                                            <td><select class="wfull"><option>선택</option></select></td>
+                                                            <td class="center"><button type="button" class="btn_sm_tb">행삭제</button></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
-
+                            
                             <div class="modal_btn_wrap">
                                 <button type="button" class="btn_md gray">취소</button>
                                 <button type="button" class="btn_md">저장</button>
                             </div>
-
-                        </div>
                     </div>
                 </div>
             </div>
